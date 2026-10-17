@@ -9,12 +9,12 @@ export default function Curtain({ isOpen, onClose }) {
       setShouldRender(true);
       const timer = setTimeout(() => {
         onClose();
-      }, 700);
+      }, 500);
       return () => clearTimeout(timer);
     } else {
       const timer = setTimeout(() => {
         setShouldRender(false);
-      }, 2300);
+      }, 1900);
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
@@ -25,15 +25,15 @@ export default function Curtain({ isOpen, onClose }) {
     <div
       className={`fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-[#FFF9F6] pointer-events-${
         isOpen ? 'auto' : 'none'
-      } transition-opacity duration-700 ${isOpen ? 'opacity-100' : 'opacity-0 delay-1000'}`}
+      } transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 delay-700'}`}
     >
       
       {/* Left Botanical Floral & Meadow Grass Panel */}
       <motion.div
         initial={{ x: 0, rotate: 0 }}
         animate={{ x: isOpen ? 0 : '-115%', rotate: isOpen ? 0 : -3 }}
-        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-0 bottom-0 left-0 w-[50vw] max-w-2xl h-full flex items-end justify-start pointer-events-none z-20"
+        transition={{ duration: 1.85, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 bottom-0 left-0 w-[50vw] max-w-2xl h-full flex items-end justify-start pointer-events-none z-20 will-change-transform"
         style={{
           WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
           maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
@@ -51,8 +51,8 @@ export default function Curtain({ isOpen, onClose }) {
       <motion.div
         initial={{ x: 0, rotate: 0 }}
         animate={{ x: isOpen ? 0 : '115%', rotate: isOpen ? 0 : 3 }}
-        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-0 bottom-0 right-0 w-[50vw] max-w-2xl h-full flex items-end justify-end pointer-events-none z-20"
+        transition={{ duration: 1.85, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 bottom-0 right-0 w-[50vw] max-w-2xl h-full flex items-end justify-end pointer-events-none z-20 will-change-transform"
         style={{
           WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
           maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
@@ -70,8 +70,8 @@ export default function Curtain({ isOpen, onClose }) {
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: isOpen ? 0 : '120%' }}
-        transition={{ duration: 2.0, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute bottom-0 left-0 right-0 w-full max-h-[50vh] flex items-end justify-center pointer-events-none z-30 overflow-visible"
+        transition={{ duration: 1.7, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute bottom-0 left-0 right-0 w-full max-h-[50vh] flex items-end justify-center pointer-events-none z-30 overflow-visible will-change-transform"
         style={{
           WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)',
           maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)'
@@ -88,8 +88,8 @@ export default function Curtain({ isOpen, onClose }) {
       <motion.div
         initial={{ scale: 1, opacity: 0.85 }}
         animate={{ scale: isOpen ? 1 : 1.25, opacity: isOpen ? 0.85 : 0 }}
-        transition={{ duration: 1.8, ease: 'easeOut' }}
-        className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center p-6"
+        transition={{ duration: 1.45, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center p-6 will-change-transform"
         style={{
           WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0) 95%)',
           maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0) 95%)'

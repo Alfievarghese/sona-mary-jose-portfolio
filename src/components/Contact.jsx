@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Copy, Check, Download, ArrowUpRight, Sparkles, MapPin, Globe, Clock, X, CheckCircle2 } from 'lucide-react';
+import { Mail, Copy, Check, Download, ArrowUpRight, Sparkles, MapPin, Globe, Clock, X, CheckCircle2, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -148,6 +148,36 @@ export default function Contact() {
                       <span>{copied ? 'Copied' : 'Copy'}</span>
                     </button>
                   </div>
+                </div>
+                {/* LinkedIn Professional Connection Row */}
+                <div className="space-y-1.5">
+                  <span className="block text-[11px] font-mono uppercase text-garden-charcoal/60 font-semibold tracking-wider">
+                    Professional Network
+                  </span>
+                  <a
+                    href="https://www.linkedin.com/in/sona-mary-277954290/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-2xl bg-white hover:bg-rose-mist/60 border border-soft-petal transition-all duration-300 group shadow-2xs"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-8 h-8 rounded-full bg-[#0A66C2]/10 flex items-center justify-center text-[#0A66C2] flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <Linkedin className="w-3.5 h-3.5" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-xs sm:text-sm font-medium text-garden-charcoal group-hover:text-blush-rose transition-colors truncate block">
+                          Sona Mary Jose
+                        </span>
+                        <span className="text-[10px] font-mono text-garden-charcoal/50 block truncate">
+                          linkedin.com/in/sona-mary
+                        </span>
+                      </div>
+                    </div>
+                    <span className="flex-shrink-0 px-3 py-1 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 text-xs font-mono text-[#0A66C2] border border-[#0A66C2]/20 transition-all flex items-center gap-1 shadow-2xs group-hover:translate-x-0.5">
+                      <span>Connect</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </span>
+                  </a>
                 </div>
 
                 {/* Context Meta Badges */}
