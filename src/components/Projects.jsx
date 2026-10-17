@@ -79,7 +79,7 @@ export default function Projects() {
               />
               <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-garden-charcoal/90 backdrop-blur-md text-white font-mono text-xs font-semibold flex items-center gap-1.5">
                 <Terminal className="w-3.5 h-3.5 text-blush-accent" />
-                <span>TechAshy 2026 Winner</span>
+                <span>TechAshy Hackathon 2026</span>
               </div>
             </div>
             <div>
@@ -90,7 +90,7 @@ export default function Projects() {
                 JARVIS — Offline AI Assistant
               </h3>
               <p className="text-xs sm:text-sm text-garden-charcoal/75 leading-relaxed font-light mb-4">
-                TechAshy Hackathon winner. Integrated Faster-Whisper for real-time speech recognition and LLaVA for desktop screen vision, completely offline within a glassmorphism Tkinter HUD.
+                Engineered for TechAshy Hackathon 2026. Integrated Faster-Whisper for real-time speech recognition and LLaVA for desktop screen vision, completely offline within a glassmorphism Tkinter HUD.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Faster-Whisper</span>
