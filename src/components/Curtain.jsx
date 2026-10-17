@@ -30,7 +30,7 @@ export default function Curtain({ isOpen, onClose }) {
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
+      initial={false}
       animate={{ opacity: isOpen ? 1 : 0 }}
       transition={{
         duration: 1.1,
@@ -47,7 +47,7 @@ export default function Curtain({ isOpen, onClose }) {
       
       {/* Left Botanical Floral & Meadow Grass Panel */}
       <motion.div
-        initial={{ x: 0, rotate: 0 }}
+        initial={false}
         animate={{ x: isOpen ? 0 : '-115%', rotate: isOpen ? 0 : -2.5 }}
         transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
         className="absolute top-0 bottom-0 left-0 w-[50vw] max-w-2xl h-full flex items-end justify-start pointer-events-none z-20 will-change-transform"
@@ -57,8 +57,9 @@ export default function Curtain({ isOpen, onClose }) {
         }}
       >
         <img
-          src="/assets/curtain_left.png"
+          src="/assets/curtain_left.webp"
           alt="Botanical meadow flowers"
+          decoding="sync"
           className="h-full w-auto object-contain object-left-bottom drop-shadow-xl select-none"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFF5F8]/70 via-[#FFF9F6]/30 to-transparent -z-10" />
@@ -66,7 +67,7 @@ export default function Curtain({ isOpen, onClose }) {
 
       {/* Right Botanical Floral & Meadow Grass Panel */}
       <motion.div
-        initial={{ x: 0, rotate: 0 }}
+        initial={false}
         animate={{ x: isOpen ? 0 : '115%', rotate: isOpen ? 0 : 2.5 }}
         transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
         className="absolute top-0 bottom-0 right-0 w-[50vw] max-w-2xl h-full flex items-end justify-end pointer-events-none z-20 will-change-transform"
@@ -76,8 +77,9 @@ export default function Curtain({ isOpen, onClose }) {
         }}
       >
         <img
-          src="/assets/curtain_right.png"
+          src="/assets/curtain_right.webp"
           alt="Botanical wild grass and peonies"
+          decoding="sync"
           className="h-full w-auto object-contain object-right-bottom drop-shadow-xl select-none"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-[#FFF5F8]/70 via-[#FFF9F6]/30 to-transparent -z-10" />
@@ -85,7 +87,7 @@ export default function Curtain({ isOpen, onClose }) {
 
       {/* Bottom Meadow Wildflower Border with Smooth Gradual Fade */}
       <motion.div
-        initial={{ y: 0 }}
+        initial={false}
         animate={{ y: isOpen ? 0 : '120%' }}
         transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute bottom-0 left-0 right-0 w-full max-h-[50vh] flex items-end justify-center pointer-events-none z-30 overflow-visible will-change-transform"
@@ -95,15 +97,16 @@ export default function Curtain({ isOpen, onClose }) {
         }}
       >
         <img
-          src="/assets/meadow_bottom.png"
+          src="/assets/meadow_bottom.webp"
           alt="Blooming meadow"
+          decoding="sync"
           className="w-full h-auto max-h-[46vh] object-cover object-bottom select-none opacity-90"
         />
       </motion.div>
 
       {/* Floating Petals Scatter with Feathered Blend */}
       <motion.div
-        initial={{ scale: 1, opacity: 0.85 }}
+        initial={false}
         animate={{ scale: isOpen ? 1 : 1.25, opacity: isOpen ? 0.85 : 0 }}
         transition={{ duration: 2.0, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center p-6 will-change-transform"
@@ -113,15 +116,16 @@ export default function Curtain({ isOpen, onClose }) {
         }}
       >
         <img
-          src="/assets/petals_cluster.png"
+          src="/assets/petals_cluster.webp"
           alt="Drifting flower petals"
+          decoding="sync"
           className="w-4/5 max-w-xl max-h-[70vh] object-contain select-none"
         />
       </motion.div>
 
       {/* Center Welcome Emblem */}
       <motion.div
-        initial={{ scale: 1, opacity: 1, y: 0 }}
+        initial={false}
         animate={{ scale: isOpen ? 1 : 0.94, opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-50 text-center px-6 max-w-xl pointer-events-none"

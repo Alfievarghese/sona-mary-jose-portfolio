@@ -33,7 +33,7 @@ export default function Hero() {
               Botanical Grace
               <span
                 className="inline-block w-8 h-8 rounded-full bg-contain bg-center bg-no-repeat align-middle"
-                style={{ backgroundImage: "url('/assets/petals_cluster.png')" }}
+                style={{ backgroundImage: "url('/assets/petals_cluster.webp')" }}
               />
             </span>
           </h1>
@@ -116,7 +116,7 @@ export default function Hero() {
 
               {/* Botanical Floral Accent Corner */}
               <div className="absolute top-3 right-3 w-16 h-16 pointer-events-none opacity-85">
-                <img src="/assets/curtain_left.png" alt="Floral motif" className="w-full h-full object-contain -scale-x-100" />
+                <img src="/assets/curtain_left.webp" alt="Floral motif" className="w-full h-full object-contain -scale-x-100" />
               </div>
 
             </div>
