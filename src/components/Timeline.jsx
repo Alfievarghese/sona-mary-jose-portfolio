@@ -39,7 +39,7 @@ export default function Timeline() {
   ];
 
   return (
-    <section id="journey" className="py-24 px-6 max-w-5xl mx-auto">
+    <section id="journey" className="py-24 px-6 max-w-5xl mx-auto scroll-mt-28 md:scroll-mt-32">
       <div className="text-center mb-16">
         <span className="font-script text-2xl text-blush-rose">Milestones</span>
         <h2 className="font-serif text-3xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight mt-1">

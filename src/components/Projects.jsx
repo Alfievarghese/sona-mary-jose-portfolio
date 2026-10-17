@@ -4,7 +4,7 @@ import { Cpu, Terminal, Palette, Award, ArrowUpRight } from 'lucide-react';
 
 export default function Projects() {
   return (
-    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-6 max-w-7xl mx-auto scroll-mt-28 md:scroll-mt-32">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
         <div>
           <span className="font-script text-2xl text-blush-rose">Curated Portfolio</span>

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Copy, Check, Download, ArrowUpRight, Sparkles, MapPin, Globe, Clock } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Copy, Check, Download, ArrowUpRight, Sparkles, MapPin, Globe, Clock, X, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState('Embedded AI & IoT');
   const [status, setStatus] = useState({ state: 'idle', message: '' });
+  const [showModal, setShowModal] = useState(false);
+  const [submittedSender, setSubmittedSender] = useState({ name: '', topic: '' });
 
   const topics = [
     'Embedded AI & IoT',
@@ -14,6 +16,17 @@ export default function Contact() {
     'Hackathon Collaboration',
     'General Inquiry'
   ];
+
+  // Close modal with Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setShowModal(false);
+    };
+    if (showModal) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showModal]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('sonamary246@gmail.com').then(() => {
@@ -24,11 +37,13 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ state: 'loading', message: 'Dispatching your note...' });
+    e.stopPropagation();
+    setStatus({ state: 'loading', message: 'Sending your query...' });
 
     const form = e.target;
     const formData = new FormData(form);
     formData.set('subject', selectedTopic);
+    const senderName = formData.get('name') || '';
 
     try {
       const res = await fetch('https://formspree.io/f/xdeabvwy', {
@@ -38,24 +53,27 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setStatus({
-          state: 'success',
-          message: 'Your message has been delivered directly to Sona Mary Jose. Expect a response within 24 hours.',
+        setSubmittedSender({
+          name: senderName,
+          topic: selectedTopic,
         });
+        setStatus({ state: 'idle', message: '' });
+        setShowModal(true);
         form.reset();
       } else {
-        throw new Error('Form submission failed');
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || 'Form submission failed');
       }
     } catch (err) {
       setStatus({
         state: 'error',
-        message: 'Could not send. Please write directly to sonamary246@gmail.com.',
+        message: 'Could not send automatically. Please write directly to sonamary246@gmail.com.',
       });
     }
   };
 
   return (
-    <section id="contact" className="py-32 px-6 max-w-7xl mx-auto relative overflow-hidden">
+    <section id="contact" className="py-28 px-6 max-w-7xl mx-auto relative overflow-hidden scroll-mt-24 md:scroll-mt-28">
       
       {/* Ambient Botanical Glow Elements */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#FDF2F5] rounded-full blur-3xl opacity-75 -z-10 pointer-events-none" />
@@ -156,7 +174,7 @@ export default function Contact() {
             {/* Right Column: Interactive Form (7 cols) */}
             <div className="lg:col-span-7 bg-[#FFF9F6]/80 border border-soft-petal rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm">
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} method="POST" action="javascript:void(0)" className="space-y-6">
                 
                 {/* Topic Selector Chips */}
                 <div className="space-y-2.5">
@@ -231,33 +249,20 @@ export default function Contact() {
                 </div>
 
                 {/* Actions Bar */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="pt-2 flex items-center">
                   <button
                     type="submit"
                     disabled={status.state === 'loading'}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-garden-charcoal hover:bg-blush-rose active:scale-95 text-white font-medium text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-md group disabled:opacity-50"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-garden-charcoal hover:bg-blush-rose active:scale-95 text-white font-medium text-sm px-8 py-3.5 rounded-full transition-all duration-300 shadow-md group disabled:opacity-50 cursor-pointer"
                   >
-                    <span>{status.state === 'loading' ? 'Dispatching...' : 'Send Botanical Message'}</span>
-                    <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center text-xs group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">
+                    <span>{status.state === 'loading' ? 'Sending...' : 'Send Query'}</span>
+                    <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </button>
-
-                  <span className="text-xs font-mono text-garden-charcoal/45">
-                    Encrypted via Formspree
-                  </span>
                 </div>
 
-                {/* Status Banners */}
-                {status.state === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 rounded-2xl text-xs font-mono bg-meadow-green/10 text-meadow-green border border-meadow-green/30"
-                  >
-                    {status.message}
-                  </motion.div>
-                )}
+                {/* Error Banner if any */}
                 {status.state === 'error' && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
@@ -276,6 +281,79 @@ export default function Contact() {
 
         </div>
       </div>
+
+      {/* Elegant Botanical Pop-up Modal for Sent Query (Zero Redirection) */}
+      <AnimatePresence>
+        {showModal && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-garden-charcoal/45 backdrop-blur-md"
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="double-bezel max-w-lg w-full relative overflow-hidden"
+            >
+              <div className="double-bezel-inner p-8 sm:p-10 text-center relative">
+                
+                {/* Decorative botanical glow */}
+                <div className="absolute -top-10 -right-10 w-44 h-44 bg-[#FDF2F5] rounded-full blur-2xl opacity-80 pointer-events-none" />
+                <div className="absolute -bottom-10 -left-10 w-44 h-44 bg-[#FAECE4] rounded-full blur-2xl opacity-80 pointer-events-none" />
+
+                {/* Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-rose-mist hover:bg-soft-petal/60 border border-soft-petal flex items-center justify-center text-garden-charcoal hover:text-blush-rose transition-colors cursor-pointer"
+                  aria-label="Close dialog"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                {/* Botanical Badge */}
+                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose shadow-inner relative">
+                  <CheckCircle2 className="w-8 h-8 text-meadow-green" />
+                  <span className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white border border-soft-petal flex items-center justify-center text-blush-rose shadow-xs">
+                    <Sparkles className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+
+                {/* Heading */}
+                <span className="font-script text-2xl text-blush-rose block mb-1">
+                  Query Delivered
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-garden-charcoal tracking-tight">
+                  Thank You{submittedSender.name ? `, ${submittedSender.name}` : ''}!
+                </h3>
+
+                {/* Message */}
+                <p className="text-sm sm:text-base text-garden-charcoal/75 font-light leading-relaxed mt-3 max-w-sm mx-auto">
+                  Your inquiry regarding <strong className="font-medium text-garden-charcoal">{submittedSender.topic || 'Engineering Collaboration'}</strong> has been securely routed directly to Sona Mary Jose.
+                </p>
+
+                {/* Delivery Guarantee Pill */}
+                <div className="my-5 p-3.5 rounded-2xl bg-petal-cream/80 border border-soft-petal flex items-center justify-center gap-2.5 text-xs font-mono text-garden-charcoal/80">
+                  <Clock className="w-3.5 h-3.5 text-blush-rose flex-shrink-0" />
+                  <span>Guaranteed response within 24 hours</span>
+                </div>
+
+                {/* Dismiss Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-garden-charcoal hover:bg-blush-rose active:scale-95 text-white font-medium text-sm py-3.5 px-6 rounded-full transition-all duration-300 shadow-md cursor-pointer"
+                >
+                  <span>Return to Portfolio</span>
+                </button>
+
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </section>
   );

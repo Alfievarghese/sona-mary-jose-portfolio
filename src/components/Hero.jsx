@@ -40,7 +40,7 @@ export default function Hero() {
 
           {/* Subtitle & Context */}
           <p className="text-base sm:text-lg text-garden-charcoal/75 leading-relaxed max-w-2xl font-light">
-            Hi, I'm <strong class="text-garden-charcoal font-semibold">Sona Mary Jose</strong>. Electronics and Communication engineer fusing low-level ESP32 firmware, sensor physics, and offline AI intelligence with serene, museum-tier UI/UX interfaces.
+            Hi, I'm <strong className="text-garden-charcoal font-semibold">Sona Mary Jose</strong>. Electronics and Communication engineer fusing low-level ESP32 firmware, sensor physics, and offline AI intelligence with serene, museum-tier UI/UX interfaces.
           </p>
 
           {/* CTA Buttons */}

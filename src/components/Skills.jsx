@@ -31,7 +31,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6 max-w-7xl mx-auto">
+    <section id="skills" className="py-20 px-6 max-w-7xl mx-auto scroll-mt-28 md:scroll-mt-32">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="font-script text-2xl text-blush-rose">Competence Matrix</span>
         <h2 className="font-serif text-3xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight mt-1">
