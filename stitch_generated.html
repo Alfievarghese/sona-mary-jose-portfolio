@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sona Mary Jose — Embedded AI, IoT &amp; UI/UX Engineer</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=JetBrains+Mono:wght@300;400;500&amp;family=Outfit:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with CDN and plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "rose-mist": "#FFEEF2",
+            "inverse-on-surface": "#faeeef",
+            "tertiary": "#3f6840",
+            "secondary-fixed": "#d8e7cc",
+            "secondary": "#54624d",
+            "on-surface": "#201a1b",
+            "background": "#fff8f8",
+            "surface-tint": "#874d5f",
+            "on-tertiary-container": "#264e29",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#a4d2a2",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#f1e5e7",
+            "tertiary-container": "#92bf90",
+            "on-secondary-fixed-variant": "#3d4b37",
+            "surface-dim": "#e3d7d9",
+            "tertiary-fixed": "#c0efbc",
+            "outline": "#837377",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#596751",
+            "on-primary": "#ffffff",
+            "dusty-sage": "#8B9A82",
+            "inverse-surface": "#352f30",
+            "outline-variant": "#d5c2c6",
+            "on-primary-fixed": "#370a1d",
+            "soft-petal": "#F5C6D0",
+            "on-surface-variant": "#514347",
+            "surface-variant": "#ebe0e1",
+            "secondary-fixed-dim": "#bccbb1",
+            "primary-fixed": "#ffd9e2",
+            "meadow-green": "#6B8F5E",
+            "surface-container": "#f7ebec",
+            "surface": "#fff8f8",
+            "on-primary-container": "#6b3547",
+            "primary": "#874d5f",
+            "on-background": "#201a1b",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#ebe0e1",
+            "petal-cream": "#FFF8F3",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fdf1f2",
+            "primary-container": "#e8a0b5",
+            "on-secondary-fixed": "#121f0e",
+            "on-primary-fixed-variant": "#6c3648",
+            "blossom-white": "#FFFFFF",
+            "surface-bright": "#fff8f8",
+            "on-error-container": "#93000a",
+            "warm-gold": "#D4A853",
+            "garden-charcoal": "#2D2B2E",
+            "secondary-container": "#d5e5ca",
+            "inverse-primary": "#fcb2c7",
+            "primary-fixed-dim": "#fcb2c7",
+            "on-tertiary-fixed": "#002106",
+            "on-tertiary-fixed-variant": "#274f2a",
+            "on-secondary": "#ffffff",
+            "blush-rose": "#E8A0B5"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "4rem",
+            "space-xs": "0.5rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "gutter": "2rem",
+            "margin": "2rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-display": ["Cormorant Garamond", "serif"],
+            "mono-badge": ["JetBrains Mono", "monospace"],
+            "label-script": ["Caveat", "cursive"],
+            "body-regular": ["Outfit", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-display": [
+              "clamp(2.25rem, 5vw, 3.75rem)",
+              {
+                "lineHeight": "1.15",
+                "fontWeight": "600"
+              }
+            ],
+            "mono-badge": [
+              "0.875rem",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ],
+            "label-script": [
+              "1.35rem",
+              {
+                "lineHeight": "1.3",
+                "fontWeight": "400"
+              }
+            ],
+            "body-regular": [
+              "1rem",
+              {
+                "lineHeight": "1.75",
+                "fontWeight": "300"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .whisper-shadow {
+      box-shadow: 0 16px 40px -12px rgba(232, 160, 181, 0.16), 0 4px 16px -2px rgba(107, 143, 94, 0.06);
+    }
+    .whisper-shadow-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .whisper-shadow-hover:hover {
+      box-shadow: 0 24px 50px -10px rgba(232, 160, 181, 0.28), 0 8px 24px -4px rgba(107, 143, 94, 0.12);
+      transform: translateY(-4px);
+    }
+    .botanical-arch {
+      border-radius: 9999px 9999px 2rem 2rem;
+    }
+    @keyframes gentlePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.15); }
+    }
+    .animate-gentle-pulse {
+      animation: gentlePulse 2.8s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-petal-cream text-on-surface font-body-regular text-body-regular antialiased selection:bg-soft-petal selection:text-on-primary-container overflow-x-hidden relative">
+<!-- Floating Glass Pill TopNavBar (Shared Component JSON Source of Truth) -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 rounded-full border border-soft-petal/30 dark:border-outline-variant/20 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md shadow-sm shadow-primary/5 w-[90%] max-w-5xl mx-auto px-6 py-3 flex items-center justify-between z-50 transition-all duration-300">
+<a class="font-headline-display text-headline-display text-on-surface dark:text-inverse-on-surface tracking-wide italic font-semibold text-xl md:text-2xl hover:text-primary transition-colors" href="#">
+      Sona Mary Jose
+    </a>
+<nav class="hidden md:flex items-center gap-7 font-body-regular text-body-regular text-sm">
+<a class="text-primary dark:text-inverse-primary font-medium border-b border-primary dark:border-inverse-primary hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#selected-works">Selected Works</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#skill-garden">Skill Garden</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#journey">Journey</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-surface-tint active:scale-95 px-5 py-2 rounded-full text-xs md:text-sm font-medium tracking-wide shadow-sm hover:shadow-primary/20 transition-all duration-200" href="#contact">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download Resume</span>
+</a>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 space-y-24 md:space-y-36">
+<!-- Hero Section -->
+<section class="relative pt-6 md:pt-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Hero Left Column -->
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-mono-badge tracking-tight border border-dusty-sage/20">
+<span class="w-2 h-2 rounded-full bg-meadow-green animate-gentle-pulse"></span>
+<span>Electronics &amp; Communication Engineering • Embedded AI &amp; UI/UX</span>
+</div>
+<!-- Hero Headline -->
+<div class="space-y-2">
+<h1 class="font-headline-display text-headline-display text-on-surface font-semibold tracking-tight">
+              Sona Mary Jose
+            </h1>
+<p class="font-label-script text-label-script text-primary text-2xl md:text-3xl italic">
+              Engineering tactile intelligence &amp; delicate interfaces
+            </p>
+</div>
+<!-- Warm Editorial Bio Card -->
+<div class="p-6 md:p-8 bg-blossom-white/90 rounded-lg border border-soft-petal/40 whisper-shadow relative overflow-hidden backdrop-blur-sm">
+<div class="absolute top-0 right-0 w-32 h-32 bg-rose-mist/60 rounded-full blur-2xl pointer-events-none"></div>
+<p class="font-body-regular text-body-regular text-on-surface-variant leading-relaxed text-base md:text-lg">
+              Bridging low-latency edge AI algorithms, hardware telemetry, and serene human-centered interfaces. Crafting systems where bare silicon meets human grace.
+            </p>
+<div class="mt-4 pt-4 border-t border-soft-petal/30 flex flex-wrap items-center gap-4 text-xs font-mono-badge text-dusty-sage">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">memory</span> Bare-Metal Edge AI
+              </span>
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-meadow-green">hub</span> Hardware Telemetry
+              </span>
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-surface-tint">palette</span> Calm Micro-Interactions
+              </span>
+</div>
+</div>
+<!-- Metrics and Status Stack -->
+<div class="flex flex-wrap items-center gap-3 w-full">
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-blossom-white border border-soft-petal/50 text-xs text-on-surface-variant font-medium whisper-shadow">
+<span class="material-symbols-outlined text-primary text-base">school</span>
+<span>Final Year B.Tech • SJCET Palai</span>
+</div>
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-secondary-fixed/50 border border-meadow-green/30 text-xs text-on-tertiary-container font-medium">
+<span class="w-2.5 h-2.5 rounded-full bg-meadow-green animate-gentle-pulse"></span>
+<span>Available for Select Engineering &amp; Design Roles • 2025</span>
+</div>
+</div>
+<!-- Primary & Secondary CTA Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-8 py-3.5 rounded-lg bg-blush-rose text-white font-medium text-sm md:text-base hover:bg-primary transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center gap-2" href="#selected-works">
+<span>Explore My Work</span>
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+</a>
+<a class="px-7 py-3.5 rounded-lg border border-primary/40 text-primary font-medium text-sm md:text-base hover:bg-rose-mist/60 transition-all duration-300 active:scale-95 flex items-center gap-2" href="#contact">
+<span>Get in Touch</span>
+<span class="material-symbols-outlined text-lg">spa</span>
+</a>
+</div>
+</div>
+<!-- Hero Right Column: Botanical Portrait Arch -->
+<div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+<!-- Decorative SVG Botanical Vines / Foliage Accents -->
+<div class="absolute -top-8 -left-8 w-28 h-28 pointer-events-none opacity-40 text-dusty-sage">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 100">
+<path d="M10 90 C 30 70, 20 40, 50 20 C 60 14, 80 15, 90 10" stroke-linecap="round"></path>
+<path d="M35 55 C 45 50, 48 38, 40 32 C 32 35, 30 45, 35 55 Z" fill="#D5E5CA" stroke="none"></path>
+<path d="M60 25 C 70 20, 72 10, 64 6 C 58 10, 56 20, 60 25 Z" fill="#F5C6D0" stroke="none"></path>
+</svg>
+</div>
+<div class="absolute -bottom-6 -right-6 w-36 h-36 pointer-events-none opacity-30 text-primary">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 100">
+<path d="M90 10 C 70 40, 80 70, 40 85 C 30 89, 15 88, 10 92" stroke-linecap="round"></path>
+<path d="M55 70 C 45 75, 42 85, 50 90 C 58 87, 60 78, 55 70 Z" fill="#E8A0B5" stroke="none"></path>
+</svg>
+</div>
+<!-- Main Portrait Container -->
+<div class="relative w-full max-w-[380px] p-2 bg-gradient-to-b from-soft-petal/40 via-blossom-white to-secondary-fixed/30 rounded-t-[14rem] rounded-b-lg border border-soft-petal/50 whisper-shadow">
+<div class="overflow-hidden rounded-t-[13.5rem] rounded-b-[1.75rem] relative aspect-[4/5] bg-surface-container">
+<img alt="Sona Mary Jose working serenely in a sunlit botanical greenhouse with orchids and design blueprints" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1Uy4TtF5VSj6NRin2Qwr-WLC5cOKRUVp2AWC31YinbHqEc85qhG_mQEp-02zzB7AVMsPi1CCFD5isocTTtRI77J7hlG1Bo19I3OL_OP8qT45Dy_PQXJBf_oVsOEU2Rpm-KsFi6-qHfwZlgbhGZGeGKgbt-2BXq-NFfg2mmCd35c9AYKuX4g00QbEQ9E3Q_EsNi_pNQSqBny9LQFJvjz49CxU-vWEjCRSZNe2JIkIDpO8WDqDetBJK3xWf8"/>
+<!-- Subtle Rose Mist vignette gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-garden-charcoal/40 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Floating Badge 1 (Top Left Overlap) -->
+<div class="absolute -top-3 -left-4 px-3.5 py-1.5 rounded-full bg-blossom-white/95 backdrop-blur-md border border-soft-petal/60 text-xs font-mono-badge text-on-surface shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">memory</span>
+<span>Embedded Silicon • ESP32 / TensorRT</span>
+</div>
+<!-- Floating Badge 2 (Bottom Right Overlap) -->
+<div class="absolute -bottom-4 -right-3 px-3.5 py-1.5 rounded-full bg-blossom-white/95 backdrop-blur-md border border-meadow-green/40 text-xs font-mono-badge text-tertiary shadow-md flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-meadow-green animate-gentle-pulse"></span>
+<span>Precision Telemetry • 99.4% Edge Vision</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Botanical Divider -->
+<div aria-hidden="true" class="w-full flex items-center justify-center py-4">
+<div class="w-24 h-px bg-gradient-to-r from-transparent to-soft-petal"></div>
+<div class="mx-4 flex items-center gap-2 text-primary/60">
+<svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24">
+<path d="M12 2C11.5 6 8 8 4 8C8 8.5 10 12 10 16C10 20 12 22 12 22C12 22 14 20 14 16C14 12 16 8.5 20 8C16 8 12.5 6 12 2Z" fill-opacity="0.35"></path>
+<circle cx="12" cy="12" fill="currentColor" r="2"></circle>
+</svg>
+</div>
+<div class="w-24 h-px bg-gradient-to-l from-transparent to-soft-petal"></div>
+</div>
+<!-- Selected Works Bento Grid -->
+<section class="space-y-10 scroll-mt-28" id="selected-works">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<div class="flex items-center justify-center gap-2 text-primary">
+<span class="material-symbols-outlined text-lg">potted_plant</span>
+<span class="font-mono-badge text-mono-badge tracking-widest uppercase text-xs text-dusty-sage">Curated Artifacts &amp; Inventions</span>
+</div>
+<h2 class="font-headline-display text-headline-display text-on-surface">
+          Selected Works &amp; Engineering
+        </h2>
+<p class="font-label-script text-label-script text-primary text-xl">
+          Engineering with Poise • Bare metal stability meets poetic clarity
+        </p>
+</div>
+<!-- Bento Grid (High variance 4-card layout) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Card 1: Smart Gas Stove (Hero 2-Col Card, spans 12 or 7 cols) -->
+<article class="md:col-span-12 lg:col-span-7 bg-blossom-white rounded-lg p-6 sm:p-8 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between overflow-hidden relative group">
+<div class="space-y-4">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed/70 text-on-secondary-fixed text-xs font-mono-badge">
+                Smart Kitchen IoT &amp; Safety Automation
+              </span>
+<span class="text-xs font-mono-badge text-dusty-sage">2024 • Hardware Patent Pending</span>
+</div>
+<div>
+<h3 class="font-headline-display text-3xl font-semibold text-on-surface group-hover:text-primary transition-colors">
+                Smart Gas Stove
+              </h3>
+<p class="mt-2 text-sm md:text-base text-on-surface-variant leading-relaxed">
+                Autonomous kitchen safety hardware combining an acoustic whistle sensor counter with real-time MQ-6 hydrocarbon gas telemetry and automated motorized solenoid shutoff valves. Complete with cross-platform mobile telemetry.
+              </p>
+</div>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant border border-outline-variant/30">ESP32 WROOM</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant border border-outline-variant/30">Acoustic Whistle Sensor</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant border border-outline-variant/30">MQ-6 Gas Telemetry</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant border border-outline-variant/30">AWS IoT Core</span>
+<span class="px-2.5 py-1 rounded-full bg-rose-mist text-xs font-mono-badge text-primary border border-soft-petal/40">Solenoid Cutoff</span>
+</div>
+<!-- Media Preview -->
+<div class="pt-4 overflow-hidden rounded-xl border border-soft-petal/30 aspect-[16/9] relative bg-surface-container-low">
+<img alt="Smart Gas Stove IoT system with glowing LED dial indicators and companion smartphone safety dashboard" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1Uw3Jky-yGwfeHnSm7TbXUwPOk9eHjaidCG4sjWXMfVcJkHBZ-TDoZkuSQW6ZrG1nAy3HNM9Zy2FWIHwCN5JxKa6PcLXllmlsVCE2qh_ZZr0cEqVcUTk5Bc8-sLGe-rPfer_sSbqKabY1Vwhtb6Ff3bpYXMie3xA9o6hB-0kYNZ3kDtiAogai6k_kaB1ql37-4uvkJAIAqNRQVVHGtBC7YzoMHQqzgzXd5d3-y1O3vCtqFg-XMKlisW7g"/>
+</div>
+</div>
+<!-- Bottom Telemetry Metric Strip -->
+<div class="mt-6 pt-4 border-t border-soft-petal/30 flex items-center justify-between text-xs font-mono-badge text-dusty-sage">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-meadow-green">sensors</span> &lt; 280ms Solenoid Response
+            </span>
+<span class="flex items-center gap-1.5 text-primary font-medium">
+<span>View Hardware Schematics</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Card 2: JARVIS (Spans 12 or 5 cols) -->
+<article class="md:col-span-12 lg:col-span-5 bg-blossom-white rounded-lg p-6 sm:p-8 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between overflow-hidden group">
+<div class="space-y-4">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-mono-badge">
+                TechAshy Hackathon 2026
+              </span>
+<span class="text-xs font-mono-badge text-meadow-green font-medium">100% Offline Edge</span>
+</div>
+<div>
+<h3 class="font-headline-display text-3xl font-semibold text-on-surface group-hover:text-primary transition-colors">
+                JARVIS — Offline Ambient AI Assistant
+              </h3>
+<p class="mt-2 text-sm text-on-surface-variant leading-relaxed">
+                A localized edge AI system running on consumer silicon with zero telemetry leaks. Features an atmospheric Tkinter HUD, real-time Faster-Whisper audio intake, and LLaVA quantized vision perception.
+              </p>
+</div>
+<!-- Tech Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant">Local LLM</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant">Faster-Whisper</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant">LLaVA Vision</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-xs font-mono-badge text-on-surface-variant">Custom HUD</span>
+</div>
+<!-- Media Preview -->
+<div class="pt-2 overflow-hidden rounded-xl border border-soft-petal/30 aspect-[16/10] relative bg-garden-charcoal">
+<img alt="JARVIS offline AI assistant with glowing circular hardware terminal and ultrawide ambient monitor display" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1UMXV1mIVNp2Jp0BEVtsfeEi5xc8IWHBX2YOeqelKGch1Flhtb8ULDWo-kO1pvPNIZLcHWrlwmlutIrZXKT0Zh7Gl4abdl1U8dpW8XErzEeVC-80i67MUFNIA2XUiOXyH6KeSezKQln1W37_-Nilh0mLv8grB15RfyFyP75bnkg8tx8qgHX0n5QTftGZYuU5nWkMC_nuzY8-V9IAGDByo_uyBF8TdhFLRyDpIzSG1McZY1Lmb4O0Mduyw"/>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-soft-petal/30 flex items-center justify-between text-xs font-mono-badge text-dusty-sage">
+<span>Air-Gapped Privacy First</span>
+<span class="text-primary flex items-center gap-1 font-medium">
+<span>Read Architecture</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</span>
+</div>
+</article>
+<!-- Card 3: UI/UX Design Associate (Spans 6 cols) -->
+<article class="md:col-span-12 lg:col-span-6 bg-blossom-white rounded-lg p-6 sm:p-8 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">
+                Remote Product Internship
+              </span>
+<span class="text-xs font-mono-badge text-dusty-sage">Infotact Solutions</span>
+</div>
+<div>
+<h3 class="font-headline-display text-2xl md:text-3xl font-semibold text-on-surface">
+                UI/UX Design Associate &amp; Systems Lead
+              </h3>
+<p class="mt-2 text-sm text-on-surface-variant leading-relaxed">
+                Led architectural overhaul of multi-tenant enterprise dashboards. Standardized a 140+ token Figma component ecosystem, streamlined navigation hierarchies, and reduced user cognitive load metrics by 38% across testing cohorts.
+              </p>
+</div>
+<!-- Metric Highlight Bento Pills -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-soft-petal/40 text-center">
+<span class="font-headline-display text-2xl font-bold text-primary block">140+</span>
+<span class="text-xs text-on-surface-variant font-mono-badge">Design Tokens Crafted</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-soft-petal/40 text-center">
+<span class="font-headline-display text-2xl font-bold text-meadow-green block">6 Pods</span>
+<span class="text-xs text-on-surface-variant font-mono-badge">Engineering Onboarded</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-xs font-mono-badge text-on-secondary-fixed">Figma Variables</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-xs font-mono-badge text-on-secondary-fixed">WCAG AAA</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-xs font-mono-badge text-on-secondary-fixed">Usability Testing</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-soft-petal/30 flex items-center justify-between text-xs font-mono-badge text-dusty-sage">
+<span>Enterprise Design System</span>
+<span class="text-primary flex items-center gap-1 font-medium">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Card 4: Embedded AI & AIoT (Spans 6 cols) -->
+<article class="md:col-span-12 lg:col-span-6 bg-blossom-white rounded-lg p-6 sm:p-8 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-mono-badge">
+                IICT GmbH Academy • Germany
+              </span>
+<span class="text-xs font-mono-badge text-meadow-green font-medium">Research Hybrid Lab</span>
+</div>
+<div>
+<h3 class="font-headline-display text-2xl md:text-3xl font-semibold text-on-surface">
+                Embedded AI &amp; Microcontroller Intelligence
+              </h3>
+<p class="mt-2 text-sm text-on-surface-variant leading-relaxed">
+                Deployed INT8 quantized convolutional neural networks directly to resource-constrained microcontrollers. Authored custom sensor fusion drivers on FreeRTOS kernels with deterministic thread telemetry.
+              </p>
+</div>
+<!-- Highlights -->
+<div class="space-y-2 pt-2 text-xs text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base">check_circle</span>
+<span>FreeRTOS task scheduling with &lt; 5µs jitter tolerances</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base">check_circle</span>
+<span>TensorFlow Lite for Microcontrollers (TFLM) integration</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base">check_circle</span>
+<span>Sub-milliwatt deep sleep wake loops on STM32 / ESP32</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-rose-mist text-xs font-mono-badge text-primary">FreeRTOS</span>
+<span class="px-2.5 py-1 rounded-full bg-rose-mist text-xs font-mono-badge text-primary">Edge Impulse</span>
+<span class="px-2.5 py-1 rounded-full bg-rose-mist text-xs font-mono-badge text-primary">TensorRT INT8</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-soft-petal/30 flex items-center justify-between text-xs font-mono-badge text-dusty-sage">
+<span>Firmware &amp; Kernel Layer</span>
+<span class="text-primary flex items-center gap-1 font-medium">
+<span>View Kernel Profiling</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Botanical Skill Garden Section -->
+<section class="space-y-12 scroll-mt-28" id="skill-garden">
+<!-- Section Intro -->
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<div class="flex items-center justify-center gap-2 text-meadow-green">
+<span class="material-symbols-outlined text-lg">psychology_alt</span>
+<span class="font-mono-badge text-mono-badge tracking-widest uppercase text-xs text-dusty-sage">Interdisciplinary Flora</span>
+</div>
+<h2 class="font-headline-display text-headline-display text-on-surface">
+          Botanical Skill Garden
+        </h2>
+<p class="font-label-script text-label-script text-primary text-xl">
+          An organic ecosystem of hardware rigor and interface artistry
+        </p>
+</div>
+<!-- 3 Garden Bed Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card A: Hardware & Silicon Layer -->
+<div class="bg-blossom-white rounded-lg p-7 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-5">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">developer_board</span>
+</div>
+<div>
+<h3 class="font-headline-display text-2xl font-semibold text-on-surface">
+                Hardware &amp; Silicon
+              </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mt-1">Physical Layer &amp; Bare Silicon</p>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Designing custom circuits, telemetry buses, and embedded micro-controllers that sense physical environments accurately.
+            </p>
+<!-- Skill Badges -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">ESP32 WROOM</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">Arduino Framework</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">STM32 Microcontrollers</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">KiCAD PCB Layout</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">Sensor Interfacing</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">FreeRTOS Scheduling</span>
+<span class="px-3 py-1.5 rounded-full bg-secondary-container/60 text-on-secondary-container text-xs font-mono-badge">I2C / SPI / UART</span>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-soft-petal/30 text-[11px] font-mono-badge text-dusty-sage flex items-center justify-between">
+<span>Rigor: High Reliability</span>
+<span class="w-2 h-2 rounded-full bg-meadow-green"></span>
+</div>
+</div>
+<!-- Card B: Software & Data Layer -->
+<div class="bg-blossom-white rounded-lg p-7 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-5">
+<div class="w-12 h-12 rounded-full bg-rose-mist flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">neurology</span>
+</div>
+<div>
+<h3 class="font-headline-display text-2xl font-semibold text-on-surface">
+                Software &amp; Data
+              </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mt-1">Algorithms &amp; Edge Inference</p>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Writing low-overhead algorithms and edge neural networks engineered for tight clock cycles and memory constraints.
+            </p>
+<!-- Skill Badges -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">Python 3.x</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">Embedded C / C++</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">MATLAB &amp; Simulink</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">Verilog HDL</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">PyTorch</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">NumPy &amp; Pandas</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">OpenCV Edge Vision</span>
+<span class="px-3 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-xs font-mono-badge">TensorFlow Lite</span>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-soft-petal/30 text-[11px] font-mono-badge text-dusty-sage flex items-center justify-between">
+<span>Latency: Sub-50ms Edge Target</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Card C: Design & Interaction Layer -->
+<div class="bg-blossom-white rounded-lg p-7 border border-soft-petal/60 whisper-shadow whisper-shadow-hover flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-5">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/40 flex items-center justify-center text-meadow-green">
+<span class="material-symbols-outlined text-2xl">magic_button</span>
+</div>
+<div>
+<h3 class="font-headline-display text-2xl font-semibold text-on-surface">
+                Design &amp; Interaction
+              </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mt-1">Human-Centered Affordances</p>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Infusing mechanical and software systems with emotional poise, legible typography, and sensory micro-feedback.
+            </p>
+<!-- Skill Badges -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Figma Master Systems</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Design Tokens &amp; Sync</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Qualitative User Research</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Wireframing &amp; IA</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Hi-Fi Prototyping</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Accessibility WCAG AAA</span>
+<span class="px-3 py-1.5 rounded-full bg-rose-mist text-primary text-xs font-mono-badge">Micro-interactions</span>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-soft-petal/30 text-[11px] font-mono-badge text-dusty-sage flex items-center justify-between">
+<span>Poise: Human Dignity First</span>
+<span class="w-2 h-2 rounded-full bg-dusty-sage"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Botanical Divider -->
+<div aria-hidden="true" class="w-full flex items-center justify-center py-2">
+<div class="w-32 h-px bg-gradient-to-r from-transparent via-soft-petal to-transparent"></div>
+</div>
+<!-- Journey & Milestones Timeline -->
+<section class="space-y-12 scroll-mt-28" id="journey">
+<!-- Section Intro -->
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<div class="flex items-center justify-center gap-2 text-primary">
+<span class="material-symbols-outlined text-lg">route</span>
+<span class="font-mono-badge text-mono-badge tracking-widest uppercase text-xs text-dusty-sage">Chronicle of Growth</span>
+</div>
+<h2 class="font-headline-display text-headline-display text-on-surface">
+          Journey &amp; Milestones
+        </h2>
+<p class="font-label-script text-label-script text-primary text-xl">
+          Deliberate Growth • Cultivating expertise across silicon and canvas
+        </p>
+</div>
+<!-- Vertical Stem Timeline Container -->
+<div class="max-w-3xl mx-auto relative pl-8 md:pl-12 border-l-2 border-soft-petal/60 space-y-10">
+<!-- Timeline Item 1 -->
+<div class="relative group">
+<!-- Botanical Node Icon -->
+<div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-7 h-7 rounded-full bg-blossom-white border-2 border-primary flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+</div>
+<div class="bg-blossom-white rounded-lg p-6 border border-soft-petal/40 whisper-shadow group-hover:border-primary/40 transition-colors">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<span class="text-xs font-mono-badge text-primary font-medium tracking-wide">2024 — PRESENT</span>
+<span class="px-2.5 py-0.5 rounded-full bg-rose-mist text-primary text-[11px] font-mono-badge">Active Focus</span>
+</div>
+<h3 class="font-headline-display text-xl font-semibold text-on-surface">
+              Embedded AI &amp; IoT Researcher
+            </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mb-2">Independent Research &amp; Capstone Initiative</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Spearheading capstone exploration in acoustic edge sensors and quantized vision intelligence for industrial safety and domestic automation. Designing zero-cloud reliant fail-safes.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative group">
+<!-- Botanical Node Icon -->
+<div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-7 h-7 rounded-full bg-blossom-white border-2 border-meadow-green flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-meadow-green"></span>
+</div>
+<div class="bg-blossom-white rounded-lg p-6 border border-soft-petal/40 whisper-shadow group-hover:border-meadow-green/40 transition-colors">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<span class="text-xs font-mono-badge text-tertiary font-medium tracking-wide">2023 — 2024</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed text-[11px] font-mono-badge">Remote Industry</span>
+</div>
+<h3 class="font-headline-display text-xl font-semibold text-on-surface">
+              UI/UX Design Associate
+            </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mb-2">Infotact Solutions • Product Design Group</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Formulated cross-platform design architectures, unified SaaS user flows, and established Figma token ecosystems that eliminated interface drift between design and frontend engineering.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative group">
+<!-- Botanical Node Icon -->
+<div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-7 h-7 rounded-full bg-blossom-white border-2 border-dusty-sage flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-dusty-sage"></span>
+</div>
+<div class="bg-blossom-white rounded-lg p-6 border border-soft-petal/40 whisper-shadow group-hover:border-dusty-sage/50 transition-colors">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<span class="text-xs font-mono-badge text-on-surface-variant font-medium tracking-wide">2021 — 2025</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-mono-badge">Undergraduate</span>
+</div>
+<h3 class="font-headline-display text-xl font-semibold text-on-surface">
+              B.Tech in Electronics &amp; Communication Engineering
+            </h3>
+<p class="text-xs font-mono-badge text-dusty-sage mb-2">St. Joseph's College of Engineering &amp; Technology (SJCET Palai)</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Consistently high academic standing. Rigorous coursework spanning Digital Signal Processing, Microcontroller Systems, VLSI Design, Control Systems, and Electromagnetic Field Theory.
+            </p>
+</div>
+</div>
+<!-- Timeline Item 4: Certifications & Specialized Training -->
+<div class="relative group">
+<!-- Botanical Node Icon -->
+<div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-7 h-7 rounded-full bg-blossom-white border-2 border-primary-container flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+</div>
+<div class="bg-blossom-white rounded-lg p-6 border border-soft-petal/40 whisper-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-mono-badge text-primary font-medium tracking-wide">DISTINCTIONS &amp; ACCREDITATIONS</span>
+</div>
+<h3 class="font-headline-display text-xl font-semibold text-on-surface mb-3">
+              Certifications &amp; Applied Lab Training
+            </h3>
+<ul class="space-y-2 text-xs md:text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base mt-0.5">verified</span>
+<div>
+<strong class="font-medium text-on-surface">IICT GmbH Germany Training Academy</strong> — Embedded AI &amp; AIoT Practitioner
+                </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base mt-0.5">verified</span>
+<div>
+<strong class="font-medium text-on-surface">AWS IoT Core Certified Practitioner</strong> — Cloud Telemetry &amp; MQTT Broker Architecture
+                </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-meadow-green text-base mt-0.5">verified</span>
+<div>
+<strong class="font-medium text-on-surface">Advanced Figma Design Systems Architecture</strong> — Component Engineering &amp; Token Sync
+                </div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Editorial Botanical Footer & Contact (Shared Component Source of Truth) -->
+<footer class="w-full rounded-t-xl bg-petal-cream dark:bg-garden-charcoal transition-all duration-300 border-t border-soft-petal/30" id="contact">
+<div class="w-full max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+<!-- Brand & Editorial Closing Statement -->
+<div class="space-y-4 max-w-xl">
+<h2 class="font-headline-display text-3xl md:text-4xl text-on-surface dark:text-inverse-on-surface font-semibold">
+          Let’s cultivate something extraordinary.
+        </h2>
+<p class="font-body-regular text-body-regular text-on-surface-variant dark:text-outline-variant text-sm md:text-base leading-relaxed">
+          Open for embedded engineering, edge AI research, and high-craft UI/UX product roles. Always eager to discuss calm hardware, tactile silicon, and mindful interfaces.
+        </p>
+<!-- Direct Contact Details -->
+<div class="pt-2 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 text-xs font-mono-badge text-on-surface-variant dark:text-outline-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">location_on</span>
+<span>Alappuzha, Kerala, India</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">mail</span>
+<a class="hover:text-primary transition-colors" href="mailto:sonamaryjose@example.com">sonamaryjose@example.com</a>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">call</span>
+<span>+91 98765 43210</span>
+</div>
+</div>
+</div>
+<!-- Botanical Editorial Links Cluster (Strict JSON Conformity) -->
+<div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center gap-6">
+<nav class="flex items-center gap-6 font-body-regular text-body-regular text-sm">
+<a class="text-on-surface-variant dark:text-outline-variant font-light hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="mailto:sonamaryjose@example.com">Email</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-light hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-light hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Resume</a>
+<a class="text-primary dark:text-inverse-primary font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#contact">Contact</a>
+</nav>
+</div>
+</div>
+<!-- Copyright Sub-bar -->
+<div class="w-full border-t border-soft-petal/20 py-6 text-center text-xs font-mono-badge text-on-surface-variant/70 dark:text-outline-variant/60">
+<p>© 2024 Sona Mary Jose • Rooted in Alappuzha, Kerala</p>
+</div>
+</footer>
+</body></html>

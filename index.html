@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sona Mary Jose — Embedded AI, IoT & UI/UX Engineer</title>
+  <meta name="description" content="Portfolio of Sona Mary Jose — B.Tech Electronics & Communication Engineer specializing in Embedded AI, IoT firmware, PCB circuitry, and refined UI/UX design." />
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Caveat, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "petal-cream": "#FFF9F6",
+            "blossom-white": "#FFFFFF",
+            "rose-mist": "#FDF3EE",
+            "rose-subtle": "#FAECE4",
+            "soft-petal": "#F4D4DF",
+            "blush-rose": "#9E4A64",
+            "blush-accent": "#EAA2B7",
+            "garden-charcoal": "#241B21",
+            "dusty-sage": "#7D9585",
+            "meadow-green": "#4D6B57",
+            "warm-gold": "#C4943D"
+          },
+          fontFamily: {
+            serif: ["'Cormorant Garamond'", "serif"],
+            sans: ["'Plus Jakarta Sans'", "sans-serif"],
+            script: ["'Caveat'", "cursive"],
+            mono: ["'JetBrains Mono'", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF9F6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #EAA2B7;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9E4A64;
+    }
+
+    /* Ambient Rose Glow */
+    .whisper-shadow {
+      box-shadow: 0 20px 40px -15px rgba(158, 74, 100, 0.12), 0 0 1px 1px rgba(244, 212, 223, 0.6);
+    }
+    .whisper-shadow-lg {
+      box-shadow: 0 28px 60px -15px rgba(158, 74, 100, 0.18), 0 0 1px 1px rgba(244, 212, 223, 0.8);
+    }
+
+    /* Double Bezel Container */
+    .double-bezel {
+      background: rgba(250, 236, 228, 0.65);
+      border: 1px solid rgba(244, 212, 223, 0.7);
+      border-radius: 2.25rem;
+      padding: 0.625rem;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .double-bezel:hover {
+      border-color: rgba(234, 162, 183, 0.9);
+      box-shadow: 0 20px 45px -12px rgba(158, 74, 100, 0.16);
+      transform: translateY(-3px);
+    }
+    .double-bezel-inner {
+      background: #FFFFFF;
+      border-radius: calc(2.25rem - 0.625rem);
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Floating Petal Animation */
+    @keyframes floatPetalSlow {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-14px) rotate(6deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .animate-float-slow {
+      animation: floatPetalSlow 7s ease-in-out infinite;
+    }
+
+    @keyframes floatPetalMedium {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(-8deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .animate-float-medium {
+      animation: floatPetalMedium 9s ease-in-out infinite;
+    }
+
+    /* Botanical Curtain Transition Elements */
+    .curtain-panel {
+      transition: transform 2.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+  </style>
+</head>
+
+<body class="bg-petal-cream text-garden-charcoal font-sans antialiased selection:bg-blush-accent/30 selection:text-blush-rose overflow-x-hidden relative min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- SIGNATURE BOTANICAL CURTAIN ANIMATION (ILLUSTRATED PNG ART PARTING EFFECT) -->
+  <!-- ========================================================================= -->
+  <div id="botanical-curtain" class="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-[#FFF9F6]">
+    
+    <!-- Left Botanical Curtain Artwork (Grass, Flowers, Eucalyptus & Watercolor Brush) -->
+    <div id="curtain-left" class="curtain-panel absolute top-0 bottom-0 left-0 w-[55vw] h-full flex items-end justify-start pointer-events-none z-20">
+      <img src="assets/curtain_left.png" alt="Botanical wildflowers and meadow grass" class="h-full w-auto object-contain object-left-bottom drop-shadow-2xl select-none" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FFF5F8]/90 via-[#FFF9F6]/60 to-transparent -z-10"></div>
+    </div>
+
+    <!-- Right Botanical Curtain Artwork (Peonies, Daisies, Herbs & Wild Grass) -->
+    <div id="curtain-right" class="curtain-panel absolute top-0 bottom-0 right-0 w-[55vw] h-full flex items-end justify-end pointer-events-none z-20">
+      <img src="assets/curtain_right.png" alt="Botanical wildflowers and meadow grass" class="h-full w-auto object-contain object-right-bottom drop-shadow-2xl select-none" />
+      <div class="absolute inset-0 bg-gradient-to-l from-[#FFF5F8]/90 via-[#FFF9F6]/60 to-transparent -z-10"></div>
+    </div>
+
+    <!-- Bottom Meadow Wildflower Border -->
+    <div id="curtain-meadow" class="curtain-panel absolute bottom-0 left-0 right-0 w-full h-[32vh] flex items-end justify-center pointer-events-none z-30">
+      <img src="assets/meadow_bottom.png" alt="Blooming meadow grass and wildflowers" class="w-full h-full object-cover object-bottom drop-shadow-lg select-none opacity-95" />
+    </div>
+
+    <!-- Drifting Floating Petals Layer -->
+    <div id="curtain-petals" class="curtain-panel absolute inset-0 pointer-events-none z-40 flex items-center justify-center">
+      <img src="assets/petals_cluster.png" alt="Floating flower petals" class="w-3/4 max-w-2xl object-contain opacity-80 animate-pulse select-none" />
+    </div>
+
+    <!-- Center Botanical Welcome Emblem -->
+    <div id="curtain-emblem" class="curtain-panel relative z-50 text-center px-6 max-w-xl transition-all duration-1000 ease-out">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-soft-petal shadow-sm mb-4">
+        <span class="w-2 h-2 rounded-full bg-meadow-green animate-ping"></span>
+        <span class="font-mono text-xs uppercase tracking-widest text-meadow-green font-medium">Digital Conservatory</span>
+      </div>
+      <h1 class="font-serif text-5xl md:text-6xl text-garden-charcoal font-semibold italic tracking-tight mb-3">
+        Sona Mary Jose
+      </h1>
+      <p class="font-script text-2xl md:text-3xl text-blush-rose mb-5">
+        Where silicon hardware blossoms with human grace...
+      </p>
+      <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-blush-accent to-transparent mx-auto"></div>
+    </div>
+  </div>
+
+  <script>
+    // Curtain Opening Choreography
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const left = document.getElementById('curtain-left');
+        const right = document.getElementById('curtain-right');
+        const meadow = document.getElementById('curtain-meadow');
+        const petals = document.getElementById('curtain-petals');
+        const emblem = document.getElementById('curtain-emblem');
+        const curtain = document.getElementById('botanical-curtain');
+
+        if (left) left.style.transform = 'translateX(-115%) rotate(-4deg)';
+        if (right) right.style.transform = 'translateX(115%) rotate(4deg)';
+        if (meadow) meadow.style.transform = 'translateY(110%)';
+        if (petals) {
+          petals.style.transform = 'scale(1.25)';
+          petals.style.opacity = '0';
+        }
+        if (emblem) {
+          emblem.style.opacity = '0';
+          emblem.style.transform = 'scale(0.92) translateY(-20px)';
+        }
+
+        setTimeout(() => {
+          if (curtain) {
+            curtain.style.opacity = '0';
+            curtain.style.transition = 'opacity 0.8s ease';
+            curtain.style.pointerEvents = 'none';
+            setTimeout(() => {
+              curtain.style.display = 'none';
+            }, 800);
+          }
+        }, 1800);
+      }, 500);
+    });
+
+    // Replay Functionality for the user
+    function replayBotanicalCurtain() {
+      const curtain = document.getElementById('botanical-curtain');
+      const left = document.getElementById('curtain-left');
+      const right = document.getElementById('curtain-right');
+      const meadow = document.getElementById('curtain-meadow');
+      const petals = document.getElementById('curtain-petals');
+      const emblem = document.getElementById('curtain-emblem');
+
+      if (!curtain) return;
+      curtain.style.display = 'flex';
+      curtain.style.opacity = '1';
+      curtain.style.pointerEvents = 'all';
+
+      left.style.transform = 'translateX(0) rotate(0deg)';
+      right.style.transform = 'translateX(0) rotate(0deg)';
+      meadow.style.transform = 'translateY(0)';
+      petals.style.transform = 'scale(1)';
+      petals.style.opacity = '0.8';
+      emblem.style.transform = 'scale(1) translateY(0)';
+      emblem.style.opacity = '1';
+
+      setTimeout(() => {
+        left.style.transform = 'translateX(-115%) rotate(-4deg)';
+        right.style.transform = 'translateX(115%) rotate(4deg)';
+        meadow.style.transform = 'translateY(110%)';
+        petals.style.transform = 'scale(1.25)';
+        petals.style.opacity = '0';
+        emblem.style.opacity = '0';
+        emblem.style.transform = 'scale(0.92) translateY(-20px)';
+
+        setTimeout(() => {
+          curtain.style.opacity = '0';
+          curtain.style.pointerEvents = 'none';
+          setTimeout(() => { curtain.style.display = 'none'; }, 800);
+        }, 1800);
+      }, 700);
+    }
+  </script>
+
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING GLASS PILL NAVBAR -->
+  <!-- ========================================================================= -->
+  <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full bg-white/80 backdrop-blur-xl border border-soft-petal/70 shadow-[0_12px_32px_-8px_rgba(158,74,100,0.12)] px-6 py-3 flex items-center justify-between transition-all duration-300">
+    <a href="#" class="flex items-center gap-2 group">
+      <span class="w-8 h-8 rounded-full bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-serif italic text-lg font-bold group-hover:scale-105 transition-transform">
+        S
+      </span>
+      <span class="font-serif text-xl md:text-2xl font-semibold tracking-tight text-garden-charcoal group-hover:text-blush-rose transition-colors">
+        Sona Mary Jose
+      </span>
+    </a>
+
+    <!-- Center Nav Links -->
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium text-garden-charcoal/80">
+      <a href="#projects" class="hover:text-blush-rose transition-colors">Selected Works</a>
+      <a href="#workbench" class="hover:text-blush-rose transition-colors">IoT Workbench</a>
+      <a href="#skills" class="hover:text-blush-rose transition-colors">Technical Arsenal</a>
+      <a href="#journey" class="hover:text-blush-rose transition-colors">Experience</a>
+      <a href="#contact" class="hover:text-blush-rose transition-colors">Contact</a>
+    </div>
+
+    <!-- Action Pill Button -->
+    <div class="flex items-center gap-3">
+      <a href="Sona_Resume (2).pdf" download="Sona_Mary_Jose_Resume.pdf" class="inline-flex items-center gap-2.5 bg-blush-rose hover:bg-[#853E54] active:scale-95 text-white text-xs md:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-blush-rose/25">
+        <span>Resume</span>
+        <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">↓</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION: ASYMMETRIC SPLIT & 2-LINE HEADLINE -->
+  <!-- ========================================================================= -->
+  <header class="relative pt-32 md:pt-44 pb-20 md:pb-32 px-6 max-w-7xl mx-auto overflow-hidden">
+    
+    <!-- Ambient Botanical Backdrops -->
+    <div class="absolute -top-12 -left-12 w-96 h-96 bg-[#FDF2F5] rounded-full blur-3xl opacity-70 -z-10 pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-20 w-96 h-96 bg-[#FAECE4] rounded-full blur-3xl opacity-60 -z-10 pointer-events-none"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Narrative Column (7 cols) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#FAECE4] border border-soft-petal text-blush-rose">
+          <span class="w-2 h-2 rounded-full bg-meadow-green animate-pulse"></span>
+          <span class="font-mono text-xs uppercase tracking-wider font-semibold">Embedded AI • IoT Firmware • UI/UX Design</span>
+        </div>
+
+        <!-- 2-Line Iron Rule Headline -->
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-garden-charcoal font-semibold leading-[1.12] tracking-tight max-w-3xl">
+          Engineering with Silicon, Designed with
+          <span class="italic text-blush-rose font-normal inline-flex items-center gap-2">
+            Botanical Grace
+            <span class="inline-block w-8 h-8 rounded-full bg-contain bg-center bg-no-repeat align-middle" style="background-image: url('assets/petals_cluster.png');"></span>
+          </span>
+        </h1>
+
+        <!-- Subtitle & Context -->
+        <p class="text-base sm:text-lg text-garden-charcoal/75 leading-relaxed max-w-2xl font-light">
+          Hi, I'm <strong class="text-garden-charcoal font-semibold">Sona Mary Jose</strong>. Electronics and Communication engineer fusing low-level ESP32 firmware, sensor physics, and offline AI intelligence with serene, museum-tier UI/UX interfaces.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <!-- Button-in-Button Primary -->
+          <a href="#projects" class="group inline-flex items-center gap-3.5 bg-garden-charcoal hover:bg-[#342830] active:scale-95 text-white font-medium text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-300 shadow-md">
+            <span>Explore Inventions</span>
+            <span class="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center text-xs group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">
+              ↗
+            </span>
+          </a>
+
+          <!-- Ghost Secondary -->
+          <a href="Sona_Resume (2).pdf" download="Sona_Mary_Jose_Resume.pdf" class="inline-flex items-center gap-2 bg-white hover:bg-[#FFF5F8] border border-soft-petal text-blush-rose font-medium text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-300">
+            <span>Download Resume (PDF)</span>
+            <span class="font-mono text-xs opacity-70">↓</span>
+          </a>
+        </div>
+
+        <!-- Verified Accreditations & Badges -->
+        <div class="pt-6 border-t border-soft-petal/60 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="flex items-center gap-2">
+            <span class="text-meadow-green font-bold">✓</span>
+            <span class="text-garden-charcoal/80">IISER Bhopal NPTEL Elite</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-meadow-green font-bold">✓</span>
+            <span class="text-garden-charcoal/80">IICT GmbH Germany Fellow</span>
+          </div>
+          <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
+            <span class="text-meadow-green font-bold">✓</span>
+            <span class="text-garden-charcoal/80">Infotact UI/UX Associate</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Double-Bezel Framed Portrait of Sona (5 cols) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="double-bezel max-w-sm sm:max-w-md w-full relative">
+          
+          <!-- Inner Core Container -->
+          <div class="double-bezel-inner overflow-hidden relative group">
+            
+            <!-- Real Photo of Sona -->
+            <img src="sona-photo.png" alt="Sona Mary Jose" class="w-full h-auto object-cover max-h-[500px] group-hover:scale-105 transition-transform duration-700 ease-out" />
+            
+            <!-- Botanical Soft Vignette & Status Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-garden-charcoal/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-mono text-xs uppercase tracking-wider text-emerald-200">Active Engineer & Designer</span>
+              </div>
+              <h2 class="font-serif text-2xl font-semibold italic text-white/95">Sona Mary Jose</h2>
+              <p class="text-xs text-white/80 font-light">St. Joseph's College of Engineering & Technology, Palai</p>
+            </div>
+
+            <!-- Botanical Floral Accent Corner -->
+            <div class="absolute top-3 right-3 w-16 h-16 pointer-events-none opacity-85">
+              <img src="assets/curtain_left.png" alt="Floral motif" class="w-full h-full object-contain -scale-x-100" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE IOT & AI TELEMETRY WORKBENCH (PROVING DUAL DISCIPLINE) -->
+  <!-- ========================================================================= -->
+  <section id="workbench" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="font-script text-2xl text-blush-rose">Interactive Laboratory</span>
+      <h2 class="font-serif text-3xl sm:text-4xl text-garden-charcoal font-semibold tracking-tight mt-1">
+        Live IoT & Edge AI Telemetry Workbench
+      </h2>
+      <p class="text-sm sm:text-base text-garden-charcoal/70 mt-2 font-light">
+        Interact directly with simulated sensor telemetry modeled after Sona's ESP32 Smart Gas Stove and offline JARVIS assistant.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Module 1: Smart Gas Stove IoT Telemetry -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 space-y-6">
+          
+          <div class="flex items-center justify-between pb-4 border-b border-soft-petal">
+            <div>
+              <span class="font-mono text-xs uppercase text-blush-rose tracking-wider font-semibold">Hardware Telemetry</span>
+              <h3 class="font-serif text-2xl font-semibold text-garden-charcoal">Smart Gas Stove (ESP32)</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-meadow-green/10 text-meadow-green font-mono text-xs font-medium flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-meadow-green animate-pulse"></span>
+              Firmware Live
+            </span>
+          </div>
+
+          <!-- Live Metrics Grid -->
+          <div class="grid grid-cols-3 gap-3 text-center">
+            
+            <div class="p-4 rounded-2xl bg-rose-mist border border-soft-petal">
+              <div class="text-xs font-mono text-garden-charcoal/60 uppercase">Whistle Count</div>
+              <div id="whistle-count" class="font-serif text-3xl sm:text-4xl font-bold text-blush-rose mt-1">3</div>
+              <div class="text-[10px] text-garden-charcoal/50">Target: 3 (Auto Shut)</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-rose-mist border border-soft-petal">
+              <div class="text-xs font-mono text-garden-charcoal/60 uppercase">Thermistor</div>
+              <div id="temp-val" class="font-serif text-3xl sm:text-4xl font-bold text-meadow-green mt-1">84°C</div>
+              <div class="text-[10px] text-garden-charcoal/50">Threshold: 110°C</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-rose-mist border border-soft-petal">
+              <div class="text-xs font-mono text-garden-charcoal/60 uppercase">MQ-4 Gas Leak</div>
+              <div id="gas-val" class="font-mono text-lg sm:text-xl font-bold text-meadow-green mt-2.5">SAFE</div>
+              <div class="text-[10px] text-garden-charcoal/50">140 ppm (Nominal)</div>
+            </div>
+
+          </div>
+
+          <!-- Solenoid Valve Status -->
+          <div class="p-4 rounded-2xl bg-petal-cream border border-soft-petal flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div id="valve-indicator" class="w-4 h-4 rounded-full bg-meadow-green"></div>
+              <div>
+                <div class="font-medium text-sm text-garden-charcoal">Solenoid Gas Valve</div>
+                <div id="valve-status" class="text-xs text-garden-charcoal/60 font-mono">AUTOMATED SHUTOFF ENGAGED</div>
+              </div>
+            </div>
+            <button onclick="triggerSimulatedWhistle()" class="px-4 py-2 rounded-full bg-blush-rose text-white text-xs font-medium hover:bg-[#853E54] active:scale-95 transition-all">
+              + Increment Whistle
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Module 2: JARVIS Offline Edge AI Assistant -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 space-y-6">
+          
+          <div class="flex items-center justify-between pb-4 border-b border-soft-petal">
+            <div>
+              <span class="font-mono text-xs uppercase text-blush-rose tracking-wider font-semibold">Edge AI Vision & Voice</span>
+              <h3 class="font-serif text-2xl font-semibold text-garden-charcoal">JARVIS Offline Assistant</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-garden-charcoal text-white font-mono text-xs font-medium">
+              TechAshy 2026
+            </span>
+          </div>
+
+          <!-- Waveform Visualizer Simulation -->
+          <div class="p-4 rounded-2xl bg-garden-charcoal text-white space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono text-white/60">
+              <span>Faster-Whisper Acoustic Wave</span>
+              <span class="text-emerald-400">Latency: 38ms (Local)</span>
+            </div>
+            <!-- Simulated Waveform Bars -->
+            <div class="h-16 flex items-end justify-between gap-1 px-2 pt-2">
+              <span class="w-1.5 bg-blush-accent rounded-full h-8 animate-pulse"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-12 animate-pulse" style="animation-delay: 0.1s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-6 animate-pulse" style="animation-delay: 0.2s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-14 animate-pulse" style="animation-delay: 0.15s"></span>
+              <span class="w-1.5 bg-emerald-400 rounded-full h-10 animate-pulse" style="animation-delay: 0.3s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-16 animate-pulse" style="animation-delay: 0.05s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-9 animate-pulse" style="animation-delay: 0.25s"></span>
+              <span class="w-1.5 bg-emerald-400 rounded-full h-12 animate-pulse" style="animation-delay: 0.18s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-7 animate-pulse" style="animation-delay: 0.22s"></span>
+              <span class="w-1.5 bg-blush-accent rounded-full h-14 animate-pulse" style="animation-delay: 0.12s"></span>
+            </div>
+            <div class="text-[11px] font-mono text-white/80 border-t border-white/10 pt-2 flex items-center justify-between">
+              <span>Command: "Inspect breadboard voltage"</span>
+              <span class="text-emerald-400">LLaVA: Analyzed</span>
+            </div>
+          </div>
+
+          <!-- Offline Capabilities Breakdown -->
+          <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-rose-mist border border-soft-petal">
+              <div class="text-garden-charcoal font-semibold">Zero Cloud Reliance</div>
+              <div class="text-garden-charcoal/60 text-[10px] mt-0.5">Runs 100% on local GPU/NPU</div>
+            </div>
+            <div class="p-3 rounded-xl bg-rose-mist border border-soft-petal">
+              <div class="text-garden-charcoal font-semibold">Tkinter Glass HUD</div>
+              <div class="text-garden-charcoal/60 text-[10px] mt-0.5">Custom ergonomic UI skin</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    let whistleCount = 3;
+    function triggerSimulatedWhistle() {
+      whistleCount++;
+      const el = document.getElementById('whistle-count');
+      const valveStatus = document.getElementById('valve-status');
+      const valveIndicator = document.getElementById('valve-indicator');
+      if (el) el.innerText = whistleCount;
+      if (whistleCount >= 3) {
+        if (valveStatus) valveStatus.innerText = "AUTOMATED SHUTOFF ENGAGED";
+        if (valveIndicator) {
+          valveIndicator.className = "w-4 h-4 rounded-full bg-meadow-green";
+        }
+      }
+    }
+  </script>
+
+
+  <!-- ========================================================================= -->
+  <!-- SELECTED WORKS: GAPLESS BENTO SHOWCASE (REAL RESUME PROJECTS) -->
+  <!-- ========================================================================= -->
+  <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div>
+        <span class="font-script text-2xl text-blush-rose">Curated Portfolio</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight mt-1">
+          Inventions, Hardware & Design
+        </h2>
+      </div>
+      <p class="text-sm text-garden-charcoal/60 max-w-md mt-4 md:mt-0 font-light">
+        A documented track record across embedded microcontrollers, acoustic sensor architectures, and production-grade interface systems.
+      </p>
+    </div>
+
+    <!-- Gapless Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      
+      <!-- Project 1: Smart Gas Stove (8 cols) -->
+      <div class="md:col-span-8 double-bezel group">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
+          <div class="overflow-hidden rounded-2xl relative aspect-video">
+            <img src="assets/smart_gas_stove.jpg" alt="Smart Gas Stove IoT Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-soft-petal font-mono text-xs font-semibold text-garden-charcoal">
+              IoT • ESP32 WROOM
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-xs font-mono text-blush-rose uppercase tracking-wider mb-2">
+              <span>Hardware Invention</span>
+              <span>•</span>
+              <span>2026</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-garden-charcoal mb-3">
+              Smart Gas Stove: Acoustic Whistle Counting & Automated Shutoff
+            </h3>
+            <p class="text-sm sm:text-base text-garden-charcoal/75 leading-relaxed font-light mb-4">
+              Engineered a safety and convenience retrofit for traditional gas stoves using an ESP32 microcontroller. Built an acoustic whistle-detection sensor system with automated solenoid shutoff, integrated MQ-4 gas leakage sensors, and dual buzzer + instant mobile alert telemetry.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">ESP32</span>
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Sensor Interfacing</span>
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">PCB Design</span>
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Safety Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: JARVIS Offline Desktop Assistant (4 cols) -->
+      <div class="md:col-span-4 double-bezel group">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
+          <div class="overflow-hidden rounded-2xl relative aspect-[4/3]">
+            <img src="assets/jarvis_ai.jpg" alt="JARVIS AI Assistant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-garden-charcoal/90 backdrop-blur-md text-white font-mono text-xs font-semibold">
+              Hackathon 2026
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-xs font-mono text-blush-rose uppercase tracking-wider mb-2">
+              <span>Offline Edge AI</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mb-2">
+              JARVIS — Offline AI Assistant
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/75 leading-relaxed font-light mb-4">
+              TechAshy Hackathon winner. Integrated Faster-Whisper for real-time speech recognition and LLaVA for desktop screen vision, completely offline within a glassmorphism Tkinter HUD.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Faster-Whisper</span>
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">LLaVA</span>
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Infotact UI/UX Design System (5 cols) -->
+      <div class="md:col-span-5 double-bezel group">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
+          <div class="overflow-hidden rounded-2xl relative aspect-[4/3]">
+            <img src="assets/uiux_case_study.jpg" alt="Infotact Solutions UI/UX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-soft-petal font-mono text-xs font-semibold text-garden-charcoal">
+              Infotact Solutions
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-xs font-mono text-blush-rose uppercase tracking-wider mb-2">
+              <span>Design System & Research</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mb-2">
+              Infotact UI/UX Design Associate L1
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/75 leading-relaxed font-light mb-4">
+              Collaborated with web development and product teams to architect intuitive user flows, comprehensive Figma component libraries, wireframes, and conducted user research testing.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Figma</span>
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">User Research</span>
+              <span class="px-2.5 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Embedded AIoT & Sensor Physics (7 cols) -->
+      <div class="md:col-span-7 double-bezel group">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col justify-between h-full space-y-6">
+          <div class="overflow-hidden rounded-2xl relative aspect-video">
+            <img src="assets/embedded_hardware.jpg" alt="Embedded AIoT Sensor Hardware" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-meadow-green text-white font-mono text-xs font-semibold">
+              IICT GmbH & IISER Bhopal
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-xs font-mono text-blush-rose uppercase tracking-wider mb-2">
+              <span>Sensor Physics & Firmware</span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-garden-charcoal mb-2">
+              Embedded AIoT Academy & Sensor Fabrication
+            </h3>
+            <p class="text-sm text-garden-charcoal/75 leading-relaxed font-light mb-4">
+              Completed intensive project readiness at IICT GmbH Training Academy, Germany, developing hybrid hardware-software embedded AI pipelines. Certified NPTEL Elite in Sensor Technologies: Physics, Fabrication, and Circuits by IISER Bhopal (score 69%).
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">Sensor Physics</span>
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">NPTEL Elite (69%)</span>
+              <span class="px-3 py-1 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs">AIoT Deployment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- TECHNICAL & SOFT SKILLS ARSENAL -->
+  <!-- ========================================================================= -->
+  <section id="skills" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="font-script text-2xl text-blush-rose">Competence Matrix</span>
+      <h2 class="font-serif text-3xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight mt-1">
+        The Botanical Garden of Skills
+      </h2>
+      <p class="text-sm sm:text-base text-garden-charcoal/70 mt-2 font-light">
+        A calibrated blend of low-level hardware fluency, modern data processing, and humanistic visual design.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Category 1: Hardware & Embedded -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 space-y-4 h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-mono font-bold mb-3">
+              HW
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-garden-charcoal mb-2">Core Hardware</h3>
+            <p class="text-xs text-garden-charcoal/70 font-light mb-4">
+              Microcontroller firmware, circuit routing, sensor interfacing, and physical validation.
+            </p>
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">ESP32</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Arduino</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">PCB Design</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Verilog</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Circuit Sim</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Software & Data Science -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 space-y-4 h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-mono font-bold mb-3">
+              PY
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-garden-charcoal mb-2">Code & Data Science</h3>
+            <p class="text-xs text-garden-charcoal/70 font-light mb-4">
+              Extensive data analytics, speech/vision edge AI models, and embedded C programming.
+            </p>
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Python</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">C Language</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">MATLAB</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Pandas</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">NumPy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: UI/UX & Design -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 space-y-4 h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-mono font-bold mb-3">
+              UI
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-garden-charcoal mb-2">Design & UI/UX</h3>
+            <p class="text-xs text-garden-charcoal/70 font-light mb-4">
+              User research, design system tokenization, wireframing, and interactive prototyping.
+            </p>
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Figma</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Wireframing</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">User Flows</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Usability Tests</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Glassmorphism</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4: Leadership & Social Impact -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 space-y-4 h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-mono font-bold mb-3">
+              LD
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-garden-charcoal mb-2">Leadership & Impact</h3>
+            <p class="text-xs text-garden-charcoal/70 font-light mb-4">
+              Community service, rapid hackathon delivery, and state-level innovation participation.
+            </p>
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">NSS Volunteer</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Red Cross</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">YIP Innovator</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Hackathons</span>
+              <span class="px-2.5 py-1 rounded-lg bg-rose-mist text-garden-charcoal">Team Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- EXPERIENCE & EDUCATION TIMELINE -->
+  <!-- ========================================================================= -->
+  <section id="journey" class="py-24 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-script text-2xl text-blush-rose">Milestones</span>
+      <h2 class="font-serif text-3xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight mt-1">
+        Academic & Industry Journey
+      </h2>
+    </div>
+
+    <div class="space-y-6">
+      
+      <!-- Item 1: IICT GmbH Germany -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="font-mono text-xs text-blush-rose uppercase tracking-wider font-semibold">Feb 2026 – Apr 2026</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mt-0.5">
+              Embedded AI & AIoT Intern
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/70 font-light mt-1">
+              IICT GmbH Training Academy, Germany (Hybrid) — Intensive readiness program executing hybrid hardware-software AI modules.
+            </p>
+          </div>
+          <span class="self-start sm:self-center px-4 py-1.5 rounded-full bg-meadow-green/10 text-meadow-green font-mono text-xs font-medium">
+            AIoT Deployment
+          </span>
+        </div>
+      </div>
+
+      <!-- Item 2: Infotact Solutions -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="font-mono text-xs text-blush-rose uppercase tracking-wider font-semibold">Jun 2025 – Aug 2025</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mt-0.5">
+              UI/UX Design Intern (Design Associate L1)
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/70 font-light mt-1">
+              Infotact Solutions (Remote) — Architected Figma wireframes, mockups, and conducted user research testing for production web platforms.
+            </p>
+          </div>
+          <span class="self-start sm:self-center px-4 py-1.5 rounded-full bg-rose-mist text-blush-rose font-mono text-xs font-medium">
+            Figma & Research
+          </span>
+        </div>
+      </div>
+
+      <!-- Item 3: Main Flow Services -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="font-mono text-xs text-blush-rose uppercase tracking-wider font-semibold">Jun 2025 – Aug 2025</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mt-0.5">
+              Data Science with Python Trainee
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/70 font-light mt-1">
+              Main Flow Services & Technologies Pvt. Ltd. — Comprehensive data-driven analytics utilizing Pandas and NumPy.
+            </p>
+          </div>
+          <span class="self-start sm:self-center px-4 py-1.5 rounded-full bg-rose-mist text-garden-charcoal font-mono text-xs font-medium">
+            Data Science
+          </span>
+        </div>
+      </div>
+
+      <!-- Item 4: St. Joseph's College of Engineering -->
+      <div class="double-bezel">
+        <div class="double-bezel-inner p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="font-mono text-xs text-blush-rose uppercase tracking-wider font-semibold">2023 – Expected 2027</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-garden-charcoal mt-0.5">
+              B.Tech in Electronics & Communication Engineering
+            </h3>
+            <p class="text-xs sm:text-sm text-garden-charcoal/70 font-light mt-1">
+              St. Joseph's College of Engineering and Technology, Palai (Autonomous), Kerala.
+            </p>
+          </div>
+          <span class="self-start sm:self-center px-4 py-1.5 rounded-full bg-[#FAECE4] text-garden-charcoal font-mono text-xs font-medium">
+            Autonomous ECE
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- CONTACT & BOTANICAL FOOTER -->
+  <!-- ========================================================================= -->
+  <footer id="contact" class="py-24 px-6 border-t border-soft-petal/60 relative overflow-hidden bg-[#FFF5F8]/40">
+    
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      
+      <span class="font-script text-3xl text-blush-rose">Connect & Collaborate</span>
+      <h2 class="font-serif text-4xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight">
+        Let's Cultivate Something Extraordinary
+      </h2>
+      <p class="text-sm sm:text-base text-garden-charcoal/70 max-w-xl mx-auto font-light leading-relaxed">
+        Whether discussing Embedded AI architectures, IoT sensor deployments, or ergonomic UI/UX design, my inbox is warmly open.
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <a href="mailto:sonamary246@gmail.com" class="inline-flex items-center gap-2.5 bg-garden-charcoal hover:bg-blush-rose text-white text-sm sm:text-base font-medium px-7 py-3.5 rounded-full transition-all duration-300 shadow-md">
+          <span>sonamary246@gmail.com</span>
+          <span class="text-xs">↗</span>
+        </a>
+
+        <a href="tel:+917510319536" class="inline-flex items-center gap-2 bg-white hover:bg-rose-mist border border-soft-petal text-garden-charcoal text-sm sm:text-base font-medium px-6 py-3.5 rounded-full transition-all duration-300">
+          <span>+91 7510319536</span>
+        </a>
+
+        <a href="Sona_Resume (2).pdf" download="Sona_Mary_Jose_Resume.pdf" class="inline-flex items-center gap-2 bg-blush-rose hover:bg-[#853E54] text-white text-sm sm:text-base font-medium px-6 py-3.5 rounded-full transition-all duration-300 shadow-sm">
+          <span>Download Resume</span>
+          <span class="text-xs">↓</span>
+        </a>
+      </div>
+
+      <div class="pt-8 text-xs font-mono text-garden-charcoal/50 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <span>Edathua, Alappuzha, Kerala, 689573</span>
+        <span class="hidden sm:inline">•</span>
+        <span>English, Malayalam, Hindi</span>
+        <span class="hidden sm:inline">•</span>
+        <span>© 2026 Sona Mary Jose</span>
+      </div>
+
+    </div>
+
+    <!-- Replay Curtain Floating Button (Botanical Flower Trigger) -->
+    <div class="fixed bottom-6 right-6 z-40">
+      <button onclick="replayBotanicalCurtain()" title="Replay Botanical Curtain Animation" class="group flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/90 backdrop-blur-md border border-soft-petal shadow-lg hover:shadow-blush-rose/20 text-xs font-medium text-garden-charcoal transition-all active:scale-95">
+        <span class="w-3 h-3 rounded-full bg-blush-accent group-hover:scale-125 transition-transform"></span>
+        <span class="font-script text-base text-blush-rose">Replay Botanical Garden</span>
+      </button>
+    </div>
+
+  </footer>
+
+</body>
+</html>
