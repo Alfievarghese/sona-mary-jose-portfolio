@@ -1,6 +1,14 @@
+# Dependencies
+node_modules/
+dist/
+
 # System and temp files
 design_b64.txt
 __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+.vercel
+
+# Skills folder
+SKILLS/
