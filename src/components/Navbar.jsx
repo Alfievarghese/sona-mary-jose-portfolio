@@ -24,26 +24,24 @@ export default function Navbar() {
     <>
       <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <nav
-          className={`pointer-events-auto w-full max-w-5xl rounded-full transition-all duration-300 flex items-center border ${
+          className={`pointer-events-auto w-full max-w-3xl rounded-full transition-all duration-300 flex items-center justify-between gap-4 sm:gap-6 border ${
             scrolled
-              ? 'bg-[#FFF9F6]/95 backdrop-blur-2xl py-2.5 px-5 md:px-7 border-soft-petal/90 shadow-[0_16px_36px_-10px_rgba(158,74,100,0.18)]'
-              : 'bg-white/90 backdrop-blur-xl py-3 px-6 md:px-8 border-soft-petal/70 shadow-[0_10px_30px_-10px_rgba(158,74,100,0.1)]'
+              ? 'bg-[#FFF9F6]/95 backdrop-blur-2xl py-2 px-4 sm:px-6 border-soft-petal/90 shadow-[0_16px_36px_-10px_rgba(158,74,100,0.18)]'
+              : 'bg-white/90 backdrop-blur-xl py-2.5 px-4 sm:px-6 border-soft-petal/70 shadow-[0_10px_30px_-10px_rgba(158,74,100,0.1)]'
           }`}
         >
-          {/* Brand Logo (Left Column - flex-1) */}
-          <div className="flex-1 flex items-center justify-start min-w-0">
-            <a href="#" className="flex items-center gap-2.5 group">
-              <span className="w-8 h-8 rounded-full bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-serif italic text-base font-bold group-hover:scale-105 transition-transform shadow-xs flex-shrink-0">
-                S
-              </span>
-              <span className="font-serif text-base md:text-lg font-semibold tracking-tight text-garden-charcoal group-hover:text-blush-rose transition-colors truncate">
-                Sona Mary Jose
-              </span>
-            </a>
-          </div>
+          {/* Brand Logo */}
+          <a href="#" className="flex items-center gap-2.5 group flex-shrink-0">
+            <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#FAECE4] border border-soft-petal flex items-center justify-center text-blush-rose font-serif italic text-sm sm:text-base font-bold group-hover:scale-105 transition-transform shadow-xs">
+              S
+            </span>
+            <span className="font-serif text-sm sm:text-base md:text-lg font-semibold tracking-tight text-garden-charcoal group-hover:text-blush-rose transition-colors whitespace-nowrap">
+              Sona Mary Jose
+            </span>
+          </a>
 
-          {/* Desktop Navigation Links (True Optical Center) */}
-          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-garden-charcoal/80 flex-shrink-0">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-garden-charcoal/80">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -56,12 +54,12 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Action Button & Mobile Toggle (Right Column - flex-1) */}
-          <div className="flex-1 flex items-center justify-end gap-3 min-w-0">
+          {/* Right Action Button & Mobile Toggle */}
+          <div className="flex items-center gap-2.5 flex-shrink-0">
             <a
               href="/Sona_Resume (2).pdf"
               download="Sona_Mary_Jose_Resume.pdf"
-              className="hidden sm:inline-flex items-center gap-2 bg-blush-rose hover:bg-[#853E54] active:scale-95 text-white text-xs md:text-sm font-medium px-4.5 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-blush-rose/25 flex-shrink-0"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-blush-rose hover:bg-[#853E54] active:scale-95 text-white text-xs font-medium px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-blush-rose/25"
             >
               <span>Resume</span>
               <Download className="w-3.5 h-3.5" />
@@ -71,7 +69,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-9 h-9 rounded-full bg-rose-mist border border-soft-petal flex items-center justify-center text-garden-charcoal focus:outline-none flex-shrink-0"
+              className="md:hidden w-8 h-8 rounded-full bg-rose-mist border border-soft-petal flex items-center justify-center text-garden-charcoal focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-4 h-4 text-blush-rose" /> : <Menu className="w-4 h-4" />}

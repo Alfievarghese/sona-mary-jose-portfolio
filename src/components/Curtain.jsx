@@ -84,17 +84,21 @@ export default function Curtain({ isOpen, onClose }) {
         />
       </motion.div>
 
-      {/* Floating Petals Scatter */}
+      {/* Floating Petals Scatter with Feathered Blend */}
       <motion.div
-        initial={{ scale: 1, opacity: 0.8 }}
-        animate={{ scale: isOpen ? 1 : 1.3, opacity: isOpen ? 0.8 : 0 }}
+        initial={{ scale: 1, opacity: 0.85 }}
+        animate={{ scale: isOpen ? 1 : 1.25, opacity: isOpen ? 0.85 : 0 }}
         transition={{ duration: 1.8, ease: 'easeOut' }}
-        className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center"
+        className="absolute inset-0 pointer-events-none z-40 flex items-center justify-center p-6"
+        style={{
+          WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0) 95%)',
+          maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0) 95%)'
+        }}
       >
         <img
           src="/assets/petals_cluster.png"
           alt="Drifting flower petals"
-          className="w-3/4 max-w-2xl object-contain select-none"
+          className="w-4/5 max-w-xl max-h-[70vh] object-contain select-none"
         />
       </motion.div>
 

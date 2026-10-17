@@ -81,98 +81,92 @@ export default function Contact() {
 
       {/* Main Double-Bezel Unified Conservatory Card */}
       <div className="double-bezel max-w-6xl mx-auto">
-        <div className="double-bezel-inner p-8 sm:p-12 md:p-16">
+        <div className="double-bezel-inner p-6 sm:p-10 md:p-12 lg:p-14">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
             
-            {/* Left Column: Editorial Overview & Direct Access (5 cols) */}
-            <div className="lg:col-span-5 space-y-8">
+            {/* Left Column: Editorial Overview & Direct Atelier Card (5 cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
               
               <div className="space-y-3">
                 <span className="font-script text-2xl text-blush-rose flex items-center gap-2">
                   <span>Botanical Inquiries</span>
                   <span className="w-8 h-[1px] bg-blush-accent" />
                 </span>
-                <h2 className="font-serif text-4xl sm:text-5xl text-garden-charcoal font-semibold tracking-tight leading-[1.15]">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] text-garden-charcoal font-semibold tracking-tight leading-[1.18]">
                   Let's cultivate your next breakthrough.
                 </h2>
-                <p className="text-sm sm:text-base text-garden-charcoal/75 leading-relaxed font-light pt-2">
-                  Available for full-time opportunities, high-agency engineering roles, custom IoT firmware prototypes, and refined UI/UX design architecture.
+                <p className="text-sm text-garden-charcoal/75 leading-relaxed font-light pt-1">
+                  Available for 2026 full-time engineering opportunities, custom IoT firmware prototypes, and refined UI/UX design architecture.
                 </p>
               </div>
 
-              {/* Sona Profile Card Pill */}
-              <div className="p-4 rounded-2xl bg-[#FFF9F6] border border-soft-petal flex items-center gap-4 shadow-sm">
-                <img
-                  src="/sona-photo.png"
-                  alt="Sona Mary Jose"
-                  className="w-14 h-14 rounded-full object-cover border border-soft-petal shadow-sm flex-shrink-0"
-                />
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-meadow-green font-semibold">
-                      Open to 2026 Roles
-                    </span>
-                  </div>
-                  <h4 className="font-serif text-lg font-semibold text-garden-charcoal">Sona Mary Jose</h4>
-                  <p className="text-xs text-garden-charcoal/60 font-light">Embedded AI • IoT • UI/UX</p>
-                </div>
-              </div>
-
-              {/* Direct 1-Click Copy Email Pill */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-rose-mist border border-soft-petal group">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-blush-rose shadow-sm flex-shrink-0">
-                      <Mail className="w-4 h-4" />
+              {/* Unified Atelier Direct Contact Card */}
+              <div className="p-6 rounded-3xl bg-[#FFF9F6]/90 border border-soft-petal space-y-5 shadow-xs">
+                {/* Sona Profile Row */}
+                <div className="flex items-center gap-4 pb-4 border-b border-soft-petal/60">
+                  <img
+                    src="/sona-photo.png"
+                    alt="Sona Mary Jose"
+                    className="w-14 h-14 rounded-full object-cover border border-soft-petal shadow-xs flex-shrink-0"
+                  />
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-meadow-green font-semibold">
+                        Open to 2026 Roles
+                      </span>
                     </div>
-                    <a
-                      href="mailto:sonamary246@gmail.com"
-                      className="text-sm sm:text-base font-medium text-garden-charcoal group-hover:text-blush-rose transition-colors truncate"
-                    >
-                      sonamary246@gmail.com
-                    </a>
+                    <h4 className="font-serif text-lg font-semibold text-garden-charcoal truncate">Sona Mary Jose</h4>
+                    <p className="text-xs text-garden-charcoal/60 font-light truncate">Embedded AI • IoT • UI/UX</p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={handleCopyEmail}
-                    className="flex-shrink-0 px-3 py-1.5 rounded-full bg-white hover:bg-petal-cream text-xs font-mono text-garden-charcoal border border-soft-petal transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
-                  >
-                    {copied ? <Check className="w-3.5 h-3.5 text-meadow-green" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{copied ? 'Copied' : 'Copy'}</span>
-                  </button>
                 </div>
-              </div>
 
-              {/* Context Details */}
-              <div className="grid grid-cols-2 gap-3 text-xs font-mono text-garden-charcoal/70">
-                <div className="p-3 rounded-xl bg-petal-cream border border-soft-petal flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-blush-rose flex-shrink-0" />
-                  <span>Kerala, India</span>
+                {/* 1-Click Copy Email Row */}
+                <div className="space-y-1.5">
+                  <span className="block text-[11px] font-mono uppercase text-garden-charcoal/60 font-semibold tracking-wider">
+                    Direct Communication
+                  </span>
+                  <div className="flex items-center justify-between p-3 rounded-2xl bg-white border border-soft-petal group">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-8 h-8 rounded-full bg-rose-mist flex items-center justify-center text-blush-rose flex-shrink-0">
+                        <Mail className="w-3.5 h-3.5" />
+                      </div>
+                      <a
+                        href="mailto:sonamary246@gmail.com"
+                        className="text-xs sm:text-sm font-medium text-garden-charcoal group-hover:text-blush-rose transition-colors truncate"
+                      >
+                        sonamary246@gmail.com
+                      </a>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="flex-shrink-0 px-3 py-1 rounded-full bg-rose-mist hover:bg-soft-petal/60 text-xs font-mono text-garden-charcoal border border-soft-petal transition-all flex items-center gap-1.5 shadow-2xs active:scale-95 cursor-pointer"
+                    >
+                      {copied ? <Check className="w-3.5 h-3.5 text-meadow-green" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copied ? 'Copied' : 'Copy'}</span>
+                    </button>
+                  </div>
                 </div>
-                <div className="p-3 rounded-xl bg-petal-cream border border-soft-petal flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-blush-rose flex-shrink-0" />
-                  <span>Reply &lt; 24h</span>
-                </div>
-              </div>
 
-              {/* Resume Download Pill */}
-              <div className="pt-2">
-                <a
-                  href="/Sona_Resume (2).pdf"
-                  download="Sona_Mary_Jose_Resume.pdf"
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-blush-rose hover:bg-[#853E54] active:scale-95 text-white font-medium text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-md"
-                >
-                  <span>Download Complete Resume (PDF)</span>
-                  <Download className="w-4 h-4" />
-                </a>
+                {/* Context Meta Badges */}
+                <div className="grid grid-cols-2 gap-3 text-xs font-mono text-garden-charcoal/70 pt-1">
+                  <div className="p-2.5 rounded-xl bg-petal-cream/70 border border-soft-petal/80 flex items-center gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-blush-rose flex-shrink-0" />
+                    <span className="truncate">Kerala, India</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-petal-cream/70 border border-soft-petal/80 flex items-center gap-2">
+                    <Clock className="w-3.5 h-3.5 text-blush-rose flex-shrink-0" />
+                    <span className="truncate">Reply &lt; 24h</span>
+                  </div>
+                </div>
               </div>
 
             </div>
 
             {/* Right Column: Interactive Form (7 cols) */}
-            <div className="lg:col-span-7 bg-[#FFF9F6]/80 border border-soft-petal rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm">
+            <div className="lg:col-span-7 bg-[#FFF9F6]/90 border border-soft-petal rounded-3xl p-6 sm:p-8 md:p-9 shadow-xs flex flex-col justify-between">
               
               <form onSubmit={handleSubmit} method="POST" action="javascript:void(0)" className="space-y-6">
                 
@@ -249,7 +243,7 @@ export default function Contact() {
                 </div>
 
                 {/* Actions Bar */}
-                <div className="pt-2 flex items-center">
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <button
                     type="submit"
                     disabled={status.state === 'loading'}
@@ -260,6 +254,11 @@ export default function Contact() {
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </button>
+
+                  <div className="flex items-center gap-2 text-xs font-mono text-garden-charcoal/50">
+                    <Sparkles className="w-3.5 h-3.5 text-blush-rose" />
+                    <span>Direct transmission to inbox</span>
+                  </div>
                 </div>
 
                 {/* Error Banner if any */}
@@ -281,7 +280,6 @@ export default function Contact() {
 
         </div>
       </div>
-
       {/* Elegant Botanical Pop-up Modal for Sent Query (Zero Redirection) */}
       <AnimatePresence>
         {showModal && (
