@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Curtain({ isOpen, onClose }) {
   const [shouldRender, setShouldRender] = useState(isOpen);
@@ -7,7 +7,6 @@ export default function Curtain({ isOpen, onClose }) {
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
-      // Auto open curtain after a short pause
       const timer = setTimeout(() => {
         onClose();
       }, 700);
@@ -23,49 +22,65 @@ export default function Curtain({ isOpen, onClose }) {
   if (!shouldRender) return null;
 
   return (
-    <div className={`fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-[#FFF9F6] pointer-events-${isOpen ? 'auto' : 'none'} transition-opacity duration-700 ${isOpen ? 'opacity-100' : 'opacity-0 delay-1000'}`}>
+    <div
+      className={`fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-[#FFF9F6] pointer-events-${
+        isOpen ? 'auto' : 'none'
+      } transition-opacity duration-700 ${isOpen ? 'opacity-100' : 'opacity-0 delay-1000'}`}
+    >
       
       {/* Left Botanical Floral & Meadow Grass Panel */}
       <motion.div
         initial={{ x: 0, rotate: 0 }}
-        animate={{ x: isOpen ? 0 : '-115%', rotate: isOpen ? 0 : -4 }}
+        animate={{ x: isOpen ? 0 : '-115%', rotate: isOpen ? 0 : -3 }}
         transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-0 bottom-0 left-0 w-[55vw] h-full flex items-end justify-start pointer-events-none z-20"
+        className="absolute top-0 bottom-0 left-0 w-[50vw] max-w-2xl h-full flex items-end justify-start pointer-events-none z-20"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
+        }}
       >
         <img
           src="/assets/curtain_left.png"
           alt="Botanical meadow flowers"
           className="h-full w-auto object-contain object-left-bottom drop-shadow-xl select-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF5F8]/80 via-[#FFF9F6]/40 to-transparent -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF5F8]/70 via-[#FFF9F6]/30 to-transparent -z-10" />
       </motion.div>
 
       {/* Right Botanical Floral & Meadow Grass Panel */}
       <motion.div
         initial={{ x: 0, rotate: 0 }}
-        animate={{ x: isOpen ? 0 : '115%', rotate: isOpen ? 0 : 4 }}
+        animate={{ x: isOpen ? 0 : '115%', rotate: isOpen ? 0 : 3 }}
         transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-0 bottom-0 right-0 w-[55vw] h-full flex items-end justify-end pointer-events-none z-20"
+        className="absolute top-0 bottom-0 right-0 w-[50vw] max-w-2xl h-full flex items-end justify-end pointer-events-none z-20"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+          maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
+        }}
       >
         <img
           src="/assets/curtain_right.png"
           alt="Botanical wild grass and peonies"
           className="h-full w-auto object-contain object-right-bottom drop-shadow-xl select-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-[#FFF5F8]/80 via-[#FFF9F6]/40 to-transparent -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#FFF5F8]/70 via-[#FFF9F6]/30 to-transparent -z-10" />
       </motion.div>
 
-      {/* Bottom Meadow Wildflower Border with Soft Top Fade */}
+      {/* Bottom Meadow Wildflower Border with Smooth Gradual Fade (NO SUDDEN CUT) */}
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: isOpen ? 0 : '115%' }}
+        animate={{ y: isOpen ? 0 : '120%' }}
         transition={{ duration: 2.0, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute bottom-0 left-0 right-0 w-full h-[32vh] flex items-end justify-center pointer-events-none z-30"
+        className="absolute bottom-0 left-0 right-0 w-full max-h-[50vh] flex items-end justify-center pointer-events-none z-30 overflow-visible"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)',
+          maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 95%)'
+        }}
       >
         <img
           src="/assets/meadow_bottom.png"
           alt="Blooming meadow"
-          className="w-full h-full object-cover object-bottom drop-shadow-md select-none opacity-95"
+          className="w-full h-auto max-h-[46vh] object-cover object-bottom select-none opacity-90"
         />
       </motion.div>
 
@@ -86,7 +101,7 @@ export default function Curtain({ isOpen, onClose }) {
       {/* Center Welcome Emblem */}
       <motion.div
         initial={{ scale: 1, opacity: 1, y: 0 }}
-        animate={{ scale: isOpen ? 1 : 0.92, opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -24 }}
+        animate={{ scale: isOpen ? 1 : 0.92, opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-50 text-center px-6 max-w-xl"
       >
